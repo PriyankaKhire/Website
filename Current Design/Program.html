@@ -2328,6 +2328,185 @@ int main()
 <hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
 </br>
 <!--###################################################################################################################################################-->
+<h4>Median of two sorted arrays</h4>
+</br>
+<h4>There are 2 sorted arrays A and B of size n each. Write an algorithm to find the median of the array obtained after merging the above 2 arrays(i.e. array of length 2n). The complexity should be O(log(n))</br> 
+</h4>
+</br></br>
+
+<p>Solution:</br> 
+ </br> 
+Sorted array Structure:</br> 
+ </br> 
+Elements less than mid   Mid   Elements greater than mid</br> 
+ </br> 
+ </br> 
+Example:</br> 
+ </br> 
+A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B		</br> 
+1, 5, 9, 13, 17, 21, 25, 29 &emsp;&ensp;		3, 7, 11, 15, 19, 23, 27</p>
+</br>
+
+<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;"> 
+  <tr align="center"> 
+    <th>lowA</th> 
+    <th>HighA</th> 
+    <th>lowB</th> 
+    <th>HighB</th> 
+    <th>MidA</th> 
+    <th>MidB</th> 
+    <th>NumberLine</th> 
+    <th>ShortNumberLine</th> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>99,99,99,99</td> 
+    <td>  99,99</td>
+    <td></td>
+	<td></td>
+    <td></td>
+	<td></td>
+	<td></td>
+  </tr> 
+
+  <tr align="center"> 
+    <td>0</td> 
+    <td>7</td> 
+    <td>0</td> 
+    <td>6</td> 
+    <td>A[3]=13</td> 
+    <td>B[3]=15</td> 
+    <td>13A,15B,99,99</td> 
+    <td>  13A,15B</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>3</td> 
+    <td>7</td> 
+    <td>0</td> 
+    <td>3</td> 
+    <td>A[5]=21</td> 
+    <td>B[1]=7</td> 
+    <td>7B,13A,15B,21A  13A, 15B</td> 
+    <td></td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>3</td> 
+    <td>5</td> 
+    <td>1</td> 
+    <td>3</td> 
+    <td>A[4]=17</td> 
+    <td>B[2]=11</td> 
+    <td>11B,13A,15B,17A  13A,15B</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>3</td> 
+    <td>4</td> 
+    <td>2</td> 
+    <td>3</td> 
+    <td>A[3]=13</td> 
+    <td>B[2]=11</td> 
+    <td>11B,13A,13A,15B   13A,15B</td> 
+	<td></td>
+  </tr> 
+
+  <tr align="center"> 
+    <td></td> 
+  </tr> 
+
+</table> 
+</br>
+<p>A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B</br>
+1, 5, 7, 10, 13&emsp;	11, 15, 23, 30, 45</br>
+</p></br>
+<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;"> 
+  <tr align="center"> 
+    <th>lowA</th> 
+    <th>HighA</th> 
+    <th>lowB</th> 
+    <th>HighB</th> 
+    <th>MidA</th> 
+    <th>MidB</th> 
+    <th>NumberLine</th> 
+    <th>ShortNumberLine</th> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>99,99,99,99</td> 
+    <td> 99,99</td>
+	<td></td> 
+	<td></td> 
+	<td></td> 
+	<td></td> 
+	<td></td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>0</td> 
+    <td>4</td> 
+    <td>0</td> 
+    <td>4</td> 
+    <td>A[2]=7</td> 
+    <td>B[2]=23</td> 
+    <td>7A, 23B, 99,99</td> 
+    <td>7A, 23B</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>2</td> 
+    <td>4</td> 
+    <td>0</td> 
+    <td>2</td> 
+    <td>A[3]=10</td> 
+    <td>B[1]=15</td> 
+    <td>7A,10A,15B,23B</td> 
+    <td>10A,15B</td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>3</td> 
+    <td>4</td> 
+    <td>0</td> 
+    <td>1</td> 
+    <td>A[3]=10</td> 
+    <td>B[0]=11</td> 
+    <td>10A,10A,11B,15B</td> 
+    <td>10A,11B</td> 
+  </tr>  
+
+</table> 
+</br>
+<p>so in general the formula becomes </br> 
+(this includes assumptions ShortFoundInArray[0] = A ShortFoundInArray[1] = B)</br> 
+lowA = MidA</br> 
+highB = MidB</br> 
+Sorted Number Line (ShortNumberLine[0], ShortNumberLine[1], MidA, MidB)</br> 
+</p>
+</br><p> </br> 
+Approach:</br> 
+<ol>
+<li> Take  mids of both arrays and put it on number line</br> 
+Let us put those mids in array called ShortNumberLine</br> 
+Also make sure that SortNumberLine[0] &lt; SortNumberLine[1] to avoid confusion and to know which direction to go in.</br> 
+Also to know which element belongs to which array we have another array Found in array which holds either A or B
+</li>
+<li> Now if both the mids are equal then end search</li> 
+<li> We know that the median lies between SortNumberLine[0] and SortNumberLine[1]</br> 
+We always go towards the SortNumberLine[0] -&gt; and &lt;- SortNumberLine[1]</li>
+</ol> 
+</p>
+</br>
+
+
+
+</br>
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
 <!--
 <h4></h4>
 </br>

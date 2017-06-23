@@ -20,13 +20,21 @@ filedata = filedata.replace('>','&gt;')
 f = open(file+"_table.txt",'w')
 f.write('<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;"> \n')
 lines = filedata.split("\n")
+count = 0
 for line in lines:
-    f.write('  <tr align="center"> \n')
+    if count%2 == 1:
+        f.write('  <tr align="center" bgcolor="#C8C8C8"> \n')
+    else:
+        f.write('  <tr align="center"> \n')
     tds = re.split(r'\t+', line)
     for td in tds:
-        f.write("    <td>"+td+"</td> \n")
+        if count == 0:
+            f.write("    <th>"+td+"</th> \n")
+        else:
+            f.write("    <td>"+td+"</td> \n")
     f.write("  </tr> \n")
     f.write("\n")
+    count+=1
 f.write("</table> \n")
 f.close()
 

@@ -43,7 +43,7 @@ def select_curly_braces(content, input_file, count):
         if text.endswith("}"):
             text = text[:-1]
         text = text.replace("\n","</br> \n")
-        return text+"\n</br>"
+        return "<p>"+text+"</p>\n</br>"
     else:
         return "-1"
 
