@@ -1,3 +1,15 @@
+#Usage: copy code that has c,c++ questions and solutions
+#Example:
+#Q: Write fibonacci series
+#Ans: The following is the program for fibo
+# def foo(n):
+#   if n == 1: return 1
+#   if n==0: return 0
+#   return foo(n-1)+foo(n-2)
+#for above question answer put the question in (())
+#answer in {{}}
+#code in [[]]
+#and this script will transform the above into html code 
 import re
 
 #Global variables
