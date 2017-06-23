@@ -1,0 +1,2729 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Priyanka Khire</title>
+  
+  <meta name="author" content="Priyanka Khire">
+  <meta name="description" content="Programs page">
+  <meta name="keywords" content="Resume, Software Developer, Software Engineer, Projects, Programs, C++, Programming Practice, Coding, Blog">
+  
+  <!--Browser Icon -->
+  <link rel="icon" href="http://graph.facebook.com/1250271614/picture?type=small">
+
+  <!-- Load the jquery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Load in the css style sheet -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Load in the javascript script-->
+  <script src="js/script.js" type="text/javascript"></script>
+	
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="font/entypo/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+
+  <!-- Load in the google code preetify-->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/vibrant-ink.css">
+
+  <!-- Smooth Scroll -->
+  <script src="js/smooth-scroll.js"></script>
+
+</head>
+<body>
+<div id="main">
+  <div class="head-content">	
+  
+    <!-- Side push menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>          
+      <a data-scroll href="#Programs">Programs</a>
+      <a data-scroll href="#Chapter0">Chapter 0</a>
+      <a data-scroll href="#Chapter0.5">Chapter 0.5</a>
+      <a data-scroll href="#Chapter1">Chapter 1</a>
+      <!--<a data-scroll href="#Chapter2">Chapter 2</a>
+      <a data-scroll href="#Chapter3">Chapter 3</a>-->
+    </div>	  
+	<!--End of side push menu -->
+	
+	<table cellpadding=20% class="menu"> 
+      <tr>
+	  <!-- Add the menu icon -->
+	    <th class="menu_item menu_icon" onclick="openNav()"><a href="#" >i</a></th>
+        <th class="menu_item"> <a href="index.html" >About</a> </th>
+		<th class="menu_item"> <a href="#" >Projects</a> </th>
+		<th class="menu_item"> <a href="#" >Experience</a> </th>
+		<th class="menu_item"> <a href="Program.html" >Programs</a> </th>
+		<th class="menu_item"> <a href="#" >Edcuation</a> </th>
+		<th class="menu_item"> <a href="#" >Skills</a> </th>
+		<th class="menu_item"> <a href="#" >Credits</a> </th>
+      </tr>	
+	</table>				
+  </div>
+		  
+  <div id="Programs" class="menu_name">Programs</div>
+    <hr class = "main_hr">  
+    <div class="content">
+
+<!--************************************************************************************-->
+<!--************************************************************************************-->
+<h2 id="Chapter0">Chapter 0 Cheats</h2>
+</br></br>
+
+<p>In general, for an array/string of size n, there are n*(n+1)/2 non-empty subarrays/subsrings.<p>
+</br></br>
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+
+<hr style="border-style: double; width:85%;"><hr style="border-style: double; width:85%;">
+</br></br>
+
+<!--************************************************************************************-->
+<!--************************************************************************************-->
+
+<h2 id="Chapter0.5">Chapter 0.5 Arrays and Strings Practice</h2>
+</br></br>
+
+
+<h4>Implementing Hash Table</h4>
+</br>
+
+<p>Simple Hash Table with Chaining</p>
+</br>
+
+<pre class="prettyprint">
+struct HashTableNodes
+{
+	int value = 0;
+	HashTableNodes *link = NULL;
+};
+static const int HashTableSize = N;
+HashTableNodes **HashTable = new HashTableNodes*[HashTableSize];
+
+int HashFunction(int key)
+{
+	return key%HashTableSize;
+}
+
+void insertion(int key, string Value)
+{
+	int index = HashFunction(key);
+
+	HashTableNodes *NewNode;
+	NewNode = new HashTableNodes;
+	NewNode-&gt;value = Value;
+	NewNode-&gt;link = NULL;
+
+	if(HashTable[index]-&gt;link == NULL)
+	{
+		HashTable[index]-&gt;link = NewNode;
+	}
+	else
+	{
+		NewNode-&gt;link = HashTable[index]-&gt;link;
+		HashTable[index]-&gt;link = NewNode;
+
+	}
+}
+
+void retrival(int key, string Value)
+{
+	int index = HashFunction(key);
+
+	HashTableNodes *Ptr;
+	Ptr = HashTable[index]-&gt;link;
+	while(Ptr != NULL)
+	{
+		if(Ptr-&gt;value = Value)
+		{	
+			cout&lt;&lt;&quot;Found&quot;;
+			break;
+		}
+		else
+		{
+			Ptr = Ptr-&gt;link;
+		}
+	}
+	if (Ptr == NULL)
+	{
+		cout&lt;&lt;&quot;Not Found&quot;;
+		break;
+	}
+
+}
+int main()
+{
+//Initialise HashTable;
+for (int i = 0; i &lt; HashTableSize; i++)
+{
+	HashTable = new HashTableNodes;
+}
+insertion(key, value);
+retrival(key, value);
+}</pre>
+</br>
+          
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+<!--###################################################################################################################################################-->
+
+<hr style="border-style: double; width:85%;"><hr style="border-style: double; width:85%;">
+</br></br>
+
+<!--************************************************************************************-->
+<!--************************************************************************************-->
+
+<h2 id="Chapter1">Chapter 1 Arrays</h2>
+</br></br>
+
+
+<h3><u>To Do Problems:</u></h3>
+</br>
+
+<h4><a href="http://www.geeksforgeeks.org/form-minimum-number-from-given-sequence/">Form minimum number from given sequence</a></h4>
+</br></br>
+          
+<h4><a href="http://www.geeksforgeeks.org/longest-span-sum-two-binary-arrays/">Longest Span with same Sum in two Binary arrays</a></h4>
+</br></br> 
+          
+<h4><a href="http://www.geeksforgeeks.org/count-inversions-of-size-three-in-a-give-array/">Count Inversions of size three in a give array</a></h4>
+</br></br> 
+
+</br>
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h3><u>Weak Problems:</u></h3>
+</br>
+
+<h4>Maximum sum such that no two elements are adjacent</h4>
+</br>
+
+<h4>Sort an array of 0s, 1s and 2s</h4>
+</br>
+<h4>Find the smallest missing number</h4>
+</br>
+
+<h4>Find duplicates in O(n) time and O(1) extra space</h4>
+</br>
+
+<h4><a href="http://www.geeksforgeeks.org/a-product-array-puzzle/">A Product Array Puzzle</a></h4>
+</br>
+
+<h4>Check for Majority Element in a sorted array</h4>
+</br>
+
+<h4>Given an array arr[], find the maximum j – i such that arr[j] > arr[i]</h4>
+</br>
+
+<h4>Find a triplet that sum to a given value</h4>
+</br>
+
+<h4>Find the smallest positive number missing from an unsorted array</h4>
+</br>
+
+<h4>Find a sorted subsequence of size 3 in linear time</h4>
+</br>
+		  
+<h4>Find a pair with the given difference</h4>
+</br>
+		  
+<h4>Find four elements that sum to a given value | Set 2 ( O(n^2Logn) Solution)</h4>
+</br>
+		  
+<h4>Find if there is a subarray with 0 sum</h4>
+</br>
+		  
+<h4>Smallest subarray with sum greater than a given value</h4>
+</br>
+		  
+<h4>Online algorithm for checking palindrome in a stream</h4>
+</br>
+		  
+<h4><a href="http://www.geeksforgeeks.org/count-pairs-with-given-sum/">Count pairs with given sum</a> [got half right]</h4>
+<!--</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>
+<h4></h4>
+</br>-->
+
+</br>
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures.</h4>
+</br>
+
+<p>
+Example:- string str = aabbccdd; </br>
+Approach1:- use hash table 
+</p>
+</br>
+
+<pre class="prettyprint">
+for(i =0 to strlen(str))
+{
+	if (str[i] not present in HashMap)
+	{
+		HashMap[str[i]] = true; 
+	}
+	else
+	{
+		cout&lt;&lt;&quot;string is not unique&quot;;
+		break;
+	}
+}</pre>
+</br>
+
+<p>Approach2:- use bool array of 26 alphabets</p>
+          
+</br>
+<pre class="prettyprint">
+bool aplhabets[26];
+//Make all the entries in the array as false
+for(int i =0; i&lt;26; i++)
+{
+	alphabets[i] = false;
+}
+//iterate over string
+for(int i = 0; i&lt;strlen(str); i++)
+{
+	//question : does capital letter equal to small letter ?
+	//Assumption: caps == small
+	//Q: string unicode or ascii ?
+	//A: string ASCII
+	//Q: what about special characters ?
+	//A: no special characters in string.
+	int ASCIIvalue = (int)str[i];
+	//checking for caps letter
+	if(ASCIIvalue &lt;= 65 || ASCIIvalue &gt;= 90)
+	{
+		ASCIIvalue = ASCIIvalue - 65;
+	}
+	//check for small letter
+	else if(ASCIIvalue &lt;= 97 || ASCIIvalue &gt;= 122)	
+	{
+		ASCIIvalue = ASCIIvalue - 97;
+	}
+
+	//put true in the bool array in the place of the letter
+	if(aplhabets[ASCIIvalue] == false)
+	{
+		aplhabets[ASCIIvalue] = true;
+	}
+	else
+	{
+		cout&lt;&lt;&quot;String not unique&quot;;
+		break;
+	}
+
+}
+</pre>
+</br>
+
+<p>Approach3:- bubble sort</p>
+          
+</br>
+<pre class="prettyprint">
+for(int i =0; i &lt; strlen(str)-1;  i++)
+{
+	for(int j = i+1; j &lt; strlen(str);  j++)
+	{
+		if(str[i] == str[j])
+		{
+			cout&lt;&lt;&quot;String not unique&quot;;
+			break;
+		}
+	}
+}
+</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Writer a code to reverse a C-Style string (C-String means that “abcd” is represented as 5 characters including the null character.)</h4>
+</br>
+<p>
+//A: strlen(&quot;abcd&quot;) = 5</br>
+Approach1:- exchange the first and the last letter of the string
+</p>
+</br>
+
+<pre class="prettyprint">
+for(int i = 0; i &lt; strlen(str)/2;  i++)
+{
+	char temp;
+	temp = str[i];
+	str[i] = str[strlen(str)-1-1-i];
+	str[strlen(str)-1-1-i] = temp;
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Design an algorithm and write code to remove duplicate characters in a string without using any additional buffers.</br>
+NOTE: One or two additional variables are fine. </br>
+An extra copy of the array is not. </br>
+FOLLOW UP </br>
+Write the test cases for this method.
+</h4>
+
+</br>
+<p>
+Example:- str = aabbccabc</br>
+//Q: is caps == small ??</br>
+//A: caps == small</br>
+//Q: string unicode or ascii</br>
+//A: ascii</br>
+Approach1:-  use hash tables or bool array of 26
+</p>
+</br>
+
+<pre class="prettyprint">
+map&lt;key, value&gt; HashMap;
+for(int i = 0; i &lt; strlen(str); i++)
+{
+	if(HashMap[str[i]] = false)
+	{
+		HashMap[str[i]] = true;
+	}
+	else
+	{
+		//Duplicate character found
+		for(int j = i; j &lt; strlen(str); j++)
+		{
+			str[j] = str[j+1];
+		}
+	}
+}</pre>
+</br>
+
+<p>Time Complexity:- O(n^2)</p>
+</br>
+<p>Approach2:- Sort it and then remove Duplicates in place</br>
+Given MergeSort to sort strings;
+</p>
+</br>
+</br>
+          
+<pre class="prettyprint">
+RemoveDuplicates(string SortedString)
+{
+	int j = 1;
+	for(int i = 0; i &lt; strlen(SortedString); i++)
+	{
+		if(SortedString[i] != SortedString[i+1])
+		{
+			SortedString[j] = SortedString[i+1];
+			j++;
+		}
+	}
+	SortedString[j] = '\0';
+}</pre>
+</br>
+
+<p>Time Complexity:- O(nlogn)</p>
+</br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+
+<h4> Write a method to decide if 2 strings are anagrams or not.</h4>
+</br>
+<p>Approach1:- sort both the strings and check if they are equal O(nlogn)+O(n)</br></br>
+Approach2:- go over first string and for occurrence of each letter put it in alphabet array</br>
+example:- string1 = &quot;aaabbccde&quot;</br>
+alphabetArray[0] = 3; alphabetArray[1] = 2; alphabetArray[2] = 2; alphabetArray[3] = 1;</br>
+alphabetArray[4] = 1;</br>
+rest all entries in alphabetArray = 0;</br></br>
+
+now go over second string and for every occourance of letter subctract that from alphabet array</br>
+example: string2 = &quot;abcabcabcde&quot;</br>
+alphabetArray[0] = 3 - 3 = 0; alphabetArray[1] = 2 - 3 = -1; alphabetArray[2] = 2 - 3 = -1 alphabetArray[3] = 1 - 1 = 0; alphabetArray[4] = 1 - 1 =0;</br></br>
+
+then add all the entries of the alphabet Array if its = 0 then the strings are anagrams if not then the strings are not anagrams time complexity O(n)+O(n)+O(26)          
+</p>
+</br>
+          
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Write a method to replace all spaces in a string with &quot;%20&quot;. You may assume that the string has sufficient space at the end of the string to hold additional characters and that you are given the true length of the string.
+EXAMPLE
+</br>Input:    &quot;Mr John Smith            &quot;
+</br>Output: &quot;Mr%20John%20Smith&quot;
+</br>
+</h4>
+</br>
+
+<p>          
+Approach1:- we start from behind the string, the condition is to replace each space in string by &quot;%20&quot; that is each space is getting replaced by 3 characters. So by default the string should have at least 3 spaces by the end of it.
+</br>The example inputs could be:
+</br> &quot;Abc&quot; -&gt; in which case we return the string as is
+</br>&quot;ABC DEF   &quot; -&gt; in which case we return the string &quot;ABC%20DEF&quot;
+</br>Thus we need at least 3 blank spaces at the end of the string to perform the string manipulation in place. 
+</br>
+</br>So we start from back and when we encounter the first character from the back we set a flag to true indicating that we are now reading the original string from the back.
+</br>Once we start reading the string from back we then put each character at the back of the string.
+</br>Example: Input = &quot;ABC DEF   &quot;
+</br>currently reading F and placing F at the back of the string -&gt; &quot;ABC DEF F&quot;
+</br>
+</br>When we encounter a blank space and the flag is true we replace that blank space by &quot;%20&quot; and continue the string manipulation further.</br>
+</p>
+</br>
+
+<pre class="prettyprint">
+bool flag = false;
+int j = 0;
+for(int i = strlen(str)-1; i &gt;=0; i--)
+{
+	if(flag == false &amp;&amp; str[i] != ' ' &amp;&amp; str[i+1] == ' ' &amp;&amp; str[i+2] == ' ' &amp;&amp; str[i+3] == ' ')
+	{
+		flag = true;
+		j = strlen(str)-1;
+	}
+	if( flag == true)
+	{
+		if(str[i] == ' ')
+		{
+			str[j] = '0';
+			j--;
+			str[j] = '2';
+			j--;
+			str[j] = '%';
+			j--;
+		}
+		else
+		{
+			str[j] = str[i];
+			j--;
+		}
+	}
+}</pre>
+</br>
+</br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+
+<h4>Given an image represented by NxN matrix, write a method to rotate the image by 90 degrees.</br> Can you do this in place ?</h4>
+</br>
+
+<p>Approach1:- Transpose the matrix in place then flip it horizontally.</p>
+</br>
+
+<pre class="prettyprint">
+ int i = 1;
+    int j = 1;
+    int temp = 0;
+    while(i &lt;= N &amp;&amp; j &lt;= N)
+    {
+        if(i+j-1 != N)
+        {
+        temp = a[i+j-1][j-1];
+        a[i+j-1][j-1] = a[j-1][i+j-1];
+        a[j-1][i+j-1] = temp;
+        i++;
+        }
+        else
+        {
+            j++;
+            i = 1;
+        }
+    }
+
+for(int k = 0; k &lt; N; k++)
+{
+	for(int m = 0; m &lt; N/2; m++)
+	{
+		int temp = a[k][m];
+		a[k][m] = a[k][N-m];
+		a[k][N-m] = temp;
+	}
+}</pre>
+</br></br>
+
+<p>Transpose function written differently</p>
+</br>
+
+<pre class="prettyprint">
+row = 0;
+column = 0;
+while(row &lt; n)
+{
+	if(row == column)
+	{
+		row++;
+		column = 0;
+	}
+	else
+	{
+		swap(a[row][column], a[column][row]);
+		column++;
+	}
+}</pre>
+</br></br>
+          
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Write an algorithm such that if an element in an MxN matrix is 0, then it's entire row and column is set to zero.</h4>
+</br>
+
+<p></p>
+</br>
+
+<pre class="prettyprint">
+bool Row[M], Col[N];
+CheckMatrix(int Matrix[M][N])
+{
+	for(int i = 0; i &lt; M; i++)
+	{
+		for(int j = 0; j &lt; N; j++)
+		{
+			if(Matrix[i][j] == 0)
+			{
+				Row[i] = true;
+				Col[j] = true;
+			}
+		}
+ 	}
+	
+	for(int i = 0; i &lt; M; i ++)
+	{
+		if(Row[i] == true)
+		{
+			SetRowToZero(i);
+		}
+	}
+	for(int j = 0; j &lt; M; j++)
+	{
+		if(Col[j] == true)
+		{
+			SetColToZero(j);
+		}
+	}
+		
+}
+SetRowToZero(int r)
+{
+	for(int j = 0; j &lt; N; j++)
+	{
+		Matrix[r][j] = 0;
+	}
+}
+SetColToZero(int c)
+{
+	for(int i = 0; i &lt; M; i++)
+	{
+		Matrix[i][c] = 0;
+	}
+}</pre>
+</br></br>
+          
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write a code to check if s2 is a rotation of s1 using only one call to isSubstring (i.e.,&quot;waterbottle&quot; is a rotation of &quot;erbottlewat&quot;)
+</h4>
+
+</br>
+<p>Approach1:- s1 = waterbottle; s2 = erbottlewat
+</br>s2.Concat(s2) = erbottle<b><font color="#8316CD">waterbottle</font></b>wat
+</br>then call isSubstring on this.</br>
+</p>
+</br>
+
+<pre class="prettyprint">
+int count = 0;
+Concat(s2)
+{
+	for(int i = 0; i &lt; strlen(s2); i++)
+	{
+		if(count == 0)
+		{
+		if(s2[i] != '\0')
+		{
+			Ans[i] = s2[i];
+		}
+		else
+		{
+			count = 1;
+			Concat(s2);
+			break;
+		}
+		}
+		else
+		{
+			if(s2[i] != '\0')
+			{
+				Ans[i+strlen(s2)] = s2[i];
+			}
+			else
+			{
+				Ans[i+strlen(s2)] = '\0';
+				break;
+			}
+		}
+	}
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Implement a method to perform basic string compression using counts of repeated characters. For example the string aaabbbcccddd would become a3b3c3d3. If the compressed string would not become smaller than the original string, your method should return the original string.
+</h4>
+
+</br>
+<p>
+<font color="red">//Q: is caps == small ?? ; unicode or ascii ?</font>
+</br><font color="green">//A: caps == small ; ascii</font>
+</br>
+</br>Approach1:- use hash tables or bool vector of 26 alphabets
+</br>
+</p>
+</br>
+
+<pre class="prettyprint">
+bool length = false;
+int index(char ch)
+{
+	int ASCIIvalue = int(ch);
+	//checking for caps letter
+	if(ASCIIvalue &lt;= 65 || ASCIIvalue &gt;= 90)
+	{
+		return ASCIIvalue - 65;
+	}
+	//check for small letter
+	else if(ASCIIvalue &lt;= 97 || ASCIIvalue &gt;= 122)	
+	{
+		return ASCIIvalue - 97;
+	}
+}
+Compress(string str)
+{
+	for(int i = 0; i &lt; strlen(str); i++)
+	{
+		int indx = index(str[i]);
+		AlphabetVector[indx]++;
+		if(AlphabetVector[indx] &gt; 1)
+		{
+			length = true;
+		}
+	}
+	if(length == true)
+	{
+		string answer;
+		int j = 0;
+	for(int i = 0; i &lt; strlen(str); i++)
+	{
+		if(str[i] != str[i+1])
+		{
+			answer[j] = str[i];
+			j++;
+		answer[j] = AlphabetVector[index(str[i])];
+		j++;
+		}
+	}
+	return answer;
+	}
+	else
+	{
+		return str;
+	}
+}</pre>
+</br>
+
+<p>
+Alternatively you can have a oneFlag set it to true in beginning assuming that the string is not compressed and go over the stored count of each alphabet of the string and if it is 1 then do nothing proceed but if it is 2 or more set one flag to be false. At the end if one flag is true meaning the string is not compressed then return string else return the newly compressed string.
+</p>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Write an efficient function to find the first nonrepeated character in a string. For instance, the first nonrepeated character in &quot;total&quot; is 'o' and the first nonrepeated character in &quot;teeter&quot; is 'r'. Discuss the efficiency of your algorithm.</h4>
+</br>
+
+<p>Approach1:- use 2 for loops.</p>
+</br>
+
+<pre class="prettyprint">
+for(int i = 0; i &lt; str.length(); i++)
+{
+	//See if str[i] is marked or not
+	if(str[i] != '0')
+	//Make Duplicate flag = false
+	//We are assuming that if str[i] 
+        //is not marked then it may not have 
+	//a duplicate
+	DuplicateFlag = false;
+	{
+		for(int j = i+1; j &lt; str.length(); j++)
+		{
+			//If str[j] is also not marked
+			if(str[j] != '0')
+			{
+				if(str[i] == str[j])
+				{
+					//Mark str[j]
+					str[j] = '0';
+					//Make Duplicate flag = true 
+                                        //indicating that str[i] has
+                                        //duplicate
+					DuplicateFlag = true;
+				}
+			}
+		}
+		if(DuplicateFlag = false)
+		{
+			print(str[i] is the first non repeated character);
+			exit(0);
+		}
+	}
+}</pre>
+</br>
+
+<p>Approach2:- Use hash tables or any other form of storage which will help you in faster retrieval of keys, so in this case a hash table</p>
+</br>
+
+<pre class="prettyprint">
+HashTable&lt;character, position&gt;
+for(int i = 0; i &lt; str.length(); i++)
+{
+//If str[i] not present in hash table then add it along with its position;
+if( !HashTable[str[i]])
+{
+	HashTable[str[i]] = i;
+}
+//If str[i] is present in hash table we know it is a duplicate so give it big position number
+//You will know why we are giving it big position number later
+else
+{
+	HashTable[str[i]] = 999;
+}	
+}
+
+//Now check the hash table and output the key value pair which has least value
+int LeastPositionValue = 999;
+for(int i = 0; i &lt; elements in hash table; i++)
+{
+	if(HashTable[i] &lt; LeastPositionValue)
+	{
+		LeastPositionValue = HashTable[i];
+	}
+} 
+
+if(LeastPositionValue != 999)
+{
+	print (FIRST non repetitive character is str[LeastPositionValue]);
+}
+else
+{
+	print( The string consists of duplicates);
+}</pre>
+</br>
+
+<p><u>Full Working Program</u></p>
+</br>
+
+<pre class="prettyprint" id="xcode">
+int CharArr[26];
+
+void initialise()
+{
+    for(int i = 0; i &lt; 26; i++)
+    {
+        CharArr[i] = 999;
+    }
+}
+
+void addCharArr(char n, int value)
+{
+    n = tolower(n);
+    int index = int(n) - int('a');
+    CharArr[index] = value;
+}
+
+bool isPresent(char n)
+{
+    n = tolower(n);
+    int index = int(n) - int('a');
+    if(CharArr[index] != 999)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int main()
+{
+    string str = &quot;abcabcg&quot;;
+    initialise();
+    for(int i = 0; i &lt; str.length(); i++)
+    {
+        if(isPresent(str[i]))
+        {
+            //Repeated character
+            addCharArr(str[i], str.length()+10);
+        }
+        else
+        {
+            addCharArr(str[i], i);
+        }
+    }
+    
+    int min = 999;
+    for(int i = 0 ; i &lt; 26; i++)
+    {
+        if(CharArr[i] &lt; min)
+        {
+            min = CharArr[i];
+        }
+    }
+    if(min != str.length()+10)
+    {
+        cout&lt;&lt;&quot;First non repeated character is &quot;&lt;&lt;str[min]&lt;&lt;endl;
+    }
+    else
+    {
+        cout&lt;&lt;&quot;String is of all repeats \n&quot;;
+    }
+    
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>
+Write an efficient function that deletes characters from an ASCII string. 
+</br>Use the prototype string removeChars( string str, string remove ); 
+</br>Where any character existing in remove must be deleted from str. 
+</br>For example, given a str of &quot;Battle of the Vowels: Hawaii vs. Grozny&quot;
+</br>and a remove of &quot;aeiou&quot;,the function should transform str to &quot;Bttl f th Vwls: Hw vs. Grzny&quot;. 
+</br>Justify any design decisions you make, and discuss the efficiency of your solution.
+</br>
+</h4>
+</br>
+
+<p>
+Approach1:- use hash table to put remove characters in it
+</br>print all the characters which are not present inside hash table
+</br>
+</p>
+</br>
+
+<pre class="prettyprint">
+HashTable&lt;char, bool&gt;
+for(int i = 0; i &lt; remove.length(); i ++)
+{
+	//If remove[i] is not present in hash table then add it
+	//This check avoids adding duplicates
+	if( !HashTable[remove[i]])
+	{
+		HashTable[remove[i]] = true;
+	}
+}
+
+//Now print all characters that are not inside hash table
+for(int i = 0; i &lt; str.length(); i++)
+{
+	//If str[i] not present in hash table then print it
+	if( !HashTable[str[i]])
+	{
+		print str[i];
+	}
+}</pre>
+</br></br>
+
+<p>
+Other Approaches :- instead of hash table you can use 26 bit vector and for remove just mark 1 indicating that character is present in remove
+</br>then while going over str just look into bit vector to see if that character is present or not
+</br>
+</p>
+</br></br>
+
+<pre class="prettyprint">
+bool BitVector[26];
+//Initialise bit vector
+for(int i = 0; i &lt; 26; i++)
+{
+	BitVector[i] = false;
+}
+
+//Now put remove characters in it
+for(int i = 0; i &lt; remove.length(); i ++)
+{
+	char n = remove[i];
+	//Convert n into its ascii value
+	int index = int(n);
+	//Subctract it by ascii value of ‘a’ to get proper index value 
+//also coz you cannot use ASCII value as index value
+index =  index -  int(‘a’);
+//Mark bit vector
+BitVector[index] = true;
+}
+//Do the same for str see if str[i] is not present in bit vector or not if not then print it else dont.</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+<h4>Reverse words in a given string
+</br>Example: Let the input string be &quot;i like this program very much&quot;. 
+</br>The function should change the string to &quot;much very program this like i&quot;
+</h4>
+</br>
+
+<p>
+Approach1:- Use horsepool's algorithm
+</br>Time Complexity O(n^2)
+</br>Space Complexity O(n)
+</p>
+</br>
+
+<pre class="prettyprint">
+int i = 0, j = 0;
+while( i &lt; input.length())
+{
+	if(input[i] == ‘ ‘)
+	{
+		//Copy string from j to i
+		//Length Of string is i-j
+		for(int k = j; k&lt;= i-j; k++)
+		{
+			Output[input.length() -1- i-j] = input[j+k];
+		}
+		i++;
+		j = i;
+	}
+	else
+	{
+		i++;
+	}
+}</pre>
+</br></br>
+
+<p>
+Approach2:- 
+</br>Take the input <b>&quot;i like this program very much&quot;</b>
+</br>Reverse Individual words
+</br><b>&quot;i ekil siht margorp yrev hcum&quot;</b>
+</br>Then reverse the whole string
+</br><b>&quot;much very program this like i&quot;</b>
+</br>Time Complexity O(n)
+</p>
+</br>
+
+<p><u>Full Working Program</u></p>
+</br>
+
+
+
+<pre class="prettyprint" id = "xcode">
+void SwapChar(char &amp;a, char &amp;b)
+{
+    char temp = a;
+    a = b;
+    b = temp;
+}
+
+void ReverseString(int StartPos, int EndPos, string &amp;input)
+{
+    int Length = EndPos - StartPos + 1;
+    for(int k = 0; k &lt; Length/2; k++)
+    {
+        SwapChar(input[StartPos+k], input[StartPos+(Length-1)-k]);
+    }
+}
+
+int main()
+{
+    string input = &quot;abc def 123&quot;;
+    
+    int i = 0, j = 0;
+    
+    while(i &lt; input.length())
+    {
+        if(input[i] == ' ')
+        {
+            ReverseString(j, i-1, input);
+            i++;
+            j = i;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    
+    //Perform one last swap for the last word
+    ReverseString(j, input.length()-1, input);
+    
+    cout&lt;&lt;input&lt;&lt;endl;
+    
+    //Reverse the whole thing
+    ReverseString(0, input.length()-1, input);
+    
+    cout&lt;&lt;input&lt;&lt;endl;
+    
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<h4>
+Write two conversion routines. 
+</br>The first routine converts a string to a signed integer. 
+</br>You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. 
+</br>The second routine converts a signed integer stored as an int back to a string.</br>
+</h4>
+</br>
+
+<p>Approach1:- </p>
+</br>
+
+<pre class="prettyprint">
+string input = &quot;-1234&quot;;
+int CreateNumber(int num, int n)
+{
+	num = num * 10;
+	num = num + n;
+	return(num);
+}
+void StrToInt(string input)
+{
+	bool negativeFlag = false;
+	int i = 0;
+	int number = 0;
+	while(i &lt; input.length())
+	{
+		if(input[i] == '-')
+		{
+			negativeFlag = true;
+		}
+		else
+		{
+			char n = input[i];
+			int num = int(n);
+			number = CreateNumber(number, num);
+		}
+		i++;
+	}
+
+	if(negativeFlag == true)
+	{
+		number = 0 - number;
+	}
+
+	cout&lt;&lt;number;
+}</pre>
+</br></br>
+
+<p>
+Another approach for this function is to convert int to string by concatenating the new numbers at the end of the string and then do a string reverse.
+</p>
+</br>
+
+<pre class="prettyprint">
+bool isNegative(int number)
+{
+	if(number &lt; 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+void IntToStr(int number)
+{
+	bool isNegativeFlag = isNegative(number);
+	if(isNegativeFlag == true)
+	{
+		//Make number positive and add -ve sign later at the end
+		number = 0 - number;
+	}
+	string numStr = &quot;&quot;;
+	while(number &gt; 0)
+	{
+		int n = number % 10;
+		//We assume NumToChar function converts numbers to chars
+		// We can write this function by implementing switch statement
+		char c = NumToChar(n);
+		//We assume the below statement concatenates c to numStr
+		numStr = c + numStr;
+		number = number/10;
+	}
+	if(isNegativeFlag)
+	{
+		numStr = '-' + numStr;
+	}
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Given an array A[] and a number x, check for pair in A[] with sum as x</h4>
+</br>
+
+<p>
+Example:- A = {4,7,1,6,3,9};
+</br><font color="red">Q) What about duplicate elements</font>
+</br><font color="red">Q) what about if you use 1 element twice ?</font>	
+</br>Approach:- Sort the array say merge sort Time Complexity O(n log n)
+</br>Then A = {1, 3, 4, 6, 7, 9}
+</br>Now initialise 2 pointers one called left another called right
+</p>
+</br>
+
+<pre class="prettyprint">
+right = A.length()-1;
+left = 0;
+while(left != right)
+{
+  if(A[left]+A[right] &gt; x)
+  {
+	  left ++;
+  }
+  else
+  if(A[left]+A[right] &lt; x)
+  {
+  	  right --;
+  }
+}</pre>
+</br></br>
+
+<p>When both left and right come together come out of the loop coz we dont want to use 1 element twice.</p>
+</br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<h4>
+Majority Element: A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element).
+</br>Write a function which takes an array and emits the majority element (if it exists), otherwise prints NONE 
+</h4>
+</br>
+
+<p>
+</br>Example: A = {3 3 4 2 4 4 2 4 4};
+</br>Output: 4
+</br>
+</br>A = {3 3 4 2 4 4 2 4};
+</br>Output: NONE
+</br>
+</br>First thought: Sort and then search Time Complexity O(n log n)
+</br>Too much time
+</br>
+</br>Approach:- Dont sort use hash table GeeksForGeeks proposes usage of binary tree
+</br>Lets stick with hash table
+</p>
+</br>
+
+<pre class="prettyprint">
+map&lt;int int&gt; HashMap;
+for(int i = 0; i &lt; A.length(); i++)
+{
+	//If elements does not exists in hash map
+	if(!HashMap[A[i]])
+	{
+		//Add element in hash map with count = 1
+		HashMap[A[i]] = 1;
+	}
+	else
+	{
+		HashMap[A[i]] ++;
+		if(HashMap[A[i]] &gt;= n/2+1)
+		{
+			cout&lt;&lt;&quot;Found element&quot;&lt;&lt;A[i]&lt;&lt;endl;
+			exit(0);
+		}
+	}
+}
+cout&lt;&lt;&quot;NONE&quot;&lt;&lt;endl;</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<h4>Write a C function to find if a given integer x appears more than n/2 times in a sorted array of n integers</h4>
+</br>
+
+<pre class="prettyprint">
+MajorityElementCount = 1;
+for(int i = 0; i &lt; N; i ++)
+{
+	if(Input[i] == Input[i+1])
+	{
+		MajorityElementCount++;
+		MajorityElement = Input[i];
+		if(MajorityElementCount &gt;= N/2)
+		{	
+			cout&lt;&lt;&quot;Majority element found&quot;;
+			exit(0);
+		}
+	}
+	else
+	{
+		MajorityElementCount = 1;
+	}	
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<h4>
+<u>Largest Sum Contiguous Subarray</u>
+</br>Write an efficient C program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum.
+</h4>
+</br>
+
+<p>
+Example: A = {−2, 1, −3, 4, −1, 2, 1, −5, 4};
+</br>Output: 4, −1, 2, 1
+</br>
+</br>Example A = {-2, -3, 4, -1, -2, 1, 5, -3};
+</br>Output: 4, -1, -2, 1, 5
+</br>
+</br>Approach:-
+</br>Let us take the above example
+</br> A = {−2 <b><sup><sup><sup><sup>0</sup></sup></sup></sup></b> ,  1 <b><sup><sup><sup><sup>1</sup></sup></sup></sup></b> ,  −3 <b><sup><sup><sup><sup>2</sup></sup></sup></sup></b> ,  4 <b><sup><sup><sup><sup>3</sup></sup></sup></sup></b> ,  −1 <b><sup><sup><sup><sup>4</sup></sup></sup></sup></b> ,  2 <b><sup><sup><sup><sup>5</sup></sup></sup></sup></b> ,  1 <b><sup><sup><sup><sup>6</sup></sup></sup></sup></b> ,  −5 <b><sup><sup><sup><sup>7</sup></sup></sup></sup></b> ,  4 <b><sup><sup><sup><sup>8</sup></sup></sup></sup></b> };
+</br>(The numbers in superscript represent the index of the numbers of the array "a")
+</p>
+</br>
+
+<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;">
+  <tr align="center">
+    <th>Current Index</th>
+	<th>Max So Far</th>
+	<th>Max Sum</th>
+	<th>Start Index</th>
+	<th>End Index</th>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td></td>
+	<td>0</td>
+	<td>-999</td>
+	<td></td>
+	<td></td>
+  </tr>
+  
+  <tr align="center">
+    <td>0</td>
+	<td>MaxSoFar+A[0] = -2</td>
+	<td>-2</td>
+	<td>0</td>
+	<td>0</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>1</td>
+	<td>MaxSoFar+A[1] = -2+1 = -1</td>
+	<td>-1</td>
+	<td>0</td>
+	<td>1</td>
+  </tr>
+  
+  <tr align="center">
+    <td>2</td>
+	<td>-1 + -3 = -4</td>
+	<td>-1</td>
+	<td>0</td>
+	<td>1</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>3</td>
+	<td>-4 + 4 = 0</td>
+	<td>0</td>
+	<td>0</td>
+	<td>3</td>
+  </tr>
+  
+  <tr align="center">
+    <td>4</td>
+	<td>0 + -1 = -1</td>
+	<td>0</td>
+	<td>0</td>
+	<td>3</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>5</td>
+	<td>-1 + 2 = 1</td>
+	<td>1</td>
+	<td>0</td>
+	<td>5</td>
+  </tr>
+  
+  <tr align="center">
+    <td>6</td>
+	<td>1 + 1 = 2</td>
+	<td>2</td>
+	<td>0</td>
+	<td>6</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>7</td>
+	<td>2 + -5 = -3</td>
+	<td>2</td>
+	<td>0</td>
+	<td>6</td>
+  </tr>
+  
+  <tr align="center">
+    <td>8</td>
+	<td>-3 + 4 = 1</td>
+	<td>2</td>
+	<td>0</td>
+	<td>6</td>
+  </tr>
+  
+</table>
+</br></br>
+
+<p>from this step we get end index </br>
+now to find start index
+</p>
+</br>
+
+<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;">
+  <tr align="center">
+    <th>Current Index</th>
+	<th>Max So Far</th>
+	<th>Max Sum</th>
+	<th>End Index</th>
+	<th>Start Index</th>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td></td>
+	<td>0</td>
+	<td>-999</td>
+	<td></td>
+	<td></td>
+  </tr>
+  
+  <tr align="center">
+    <td>6</td>
+	<td>MaxSoFar+A[6] = 1</td>
+	<td>1</td>
+	<td>6</td>
+	<td>6</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>5</td>
+	<td>MaxSoFar+A[5] = 1+2 = 3 </td>
+	<td>3</td>
+	<td>6</td>
+	<td>5</td>
+  </tr>
+  
+  <tr align="center">
+    <td>4</td>
+	<td>3 + -1 = 2</td>
+	<td>3</td>
+	<td>6</td>
+	<td>5</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>3</td>
+	<td>2 + 4 = 6</td>
+	<td>6</td>
+	<td>6</td>
+	<td>3</td>
+  </tr>
+  
+  <tr align="center">
+    <td>2</td>
+	<td>6 + -3 = 3</td>
+	<td>6</td>
+	<td>6</td>
+	<td>3</td>
+  </tr>
+  
+  <tr align="center" bgcolor="#C8C8C8">
+    <td>1</td>
+	<td>3 + 1 = 4</td>
+	<td>6</td>
+	<td>6</td>
+	<td>3</td>
+  </tr>
+  
+  <tr align="center">
+    <td>0</td>
+	<td>4 + -2 = 2</td>
+	<td>6</td>
+	<td>6</td>
+	<td>3</td>
+  </tr>
+
+</table>
+</br></br> 
+
+<p>
+So the basic idea is to do 2 passes over the string
+</br>in first pass start from left to right and here we find the end index
+</br>in second pass start from right to left and here we start from the end index found in previous step.
+</br>at beginning of each step initialise MaxSoFar = 0 and MaxSum = -999
+</br>why -999 and not 0 is to handel -ve cases
+</br>Example: A = {-125, 25, -26}
+</p>
+</br>
+
+<p>initialise Start index = 0;</br>
+Main aim to find end index</br>
+in first pass start with current index as 0</br>
+</p>
+<pre class="prettyprint">
+MaxSoFar = MaxSoFar + A[CurrentIndex];
+if(MaxSum &lt; MaxSoFar)
+{
+	MaxSum = MaxSoFar;
+	EndIndex = CurrentIndex;
+}</pre>
+</br></br>
+
+<p>
+Now we have end index</br>
+Main aim to find start index</br>
+run over the string from right to left starting from the end index found in previous step</br>
+</p>
+<pre class="prettyprint">
+MaxSoFar = MaxSoFar + A[CurrentIndex];
+if(MaxSum &lt; MaxSoFar)
+{
+	MaxSum = MaxSoFar;
+	StartIndex = CurrentIndex;
+}</pre>
+</br></br>
+
+<p>Finally max sum is MaxSum and we have the contiguous sub array with start index and end index.</p>
+</br></br>
+
+<p>
+The above program does not handle cases like
+</br>Example: A = {-2, -3, -4, -1, -2, -1, -5, -3};
+</br>What would you do in this case ?
+</br> Perhaps first run a for loop to see if all are negative or not, while also keeping track of the max element.
+</br>If all are negative then just return max element along with its index
+</br>		
+</br>Now the above program does not handle cases like
+</br>
+</br>Example: A = { -2, -3, -4, -1, -2, -1, -5, -3, 0, 8};
+</br>
+</br>So a simple update to this solution is to check if MaxSoFar -ve
+</br>if it is then make MaxSoFar = 0
+</p>
+</br>
+
+<p>
+Thus the updated solution will look like
+</br> Step 1)
+</br>MaxSoFar = 0;
+</br>MaxSum = 0;
+</br>StartIndex = 0;
+</br>EndIndex = 0;
+</br>
+</p>
+</br>
+
+<p>Step 2) Find EndIndex</p>
+<pre class="prettyprint">
+for(int CurrentIndex = StartIndex; CurrentIndex &lt; NumberOfElements[A]; CurrentIndex++)
+{
+	MaxSoFar = MaxSoFar + A[CurrentIndex];
+	if(MaxSoFar &lt; 0)
+	{
+		MaxSoFar = 0;
+	}
+	if(MaxSoFar &gt; MaxSum)
+	{
+		MaxSum = MaxSoFar;
+		EndIndex = CurrentIndex;
+	}
+}</pre>
+</br></br>
+
+<p>
+Step 3) Initialise again
+</br>MaxSoFar = 0;
+</br>MaxSum = 0;
+</br>
+</p>
+</br>
+
+<p>Step 4) Find Start Index</p>
+<pre class="prettyprint">
+for(int CurrentIndex = EndIndex; CurrentIndex &gt;= 0; CurrentIndex--)
+{
+	MaxSoFar = MaxSoFar + A[CurrentIndex];
+	if(MaxSoFar &lt; 0)
+	{
+		MaxSoFar = 0;
+	}
+	if(MaxSoFar &gt; MaxSum)
+	{
+		MaxSum = MaxSoFar;
+		StartIndex = CurrentIndex;
+	}
+}</pre>
+</br></br>
+
+<p>
+Let's use this Algorithm</br>
+Example: A = { -2,  -3,  -4,   -3,  0,   8};</br>
+</p>
+</br>
+
+<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;"> 
+  <tr align="center"> 
+    <th>CurrentIndex</th> 
+    <th>MaxSoFar</th> 
+    <th>MaxSum</th> 
+    <th>StartIndex</th> 
+    <th>EndIndex</th> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>0</td> 
+    <td>0</td> 
+	<td></td>
+	<td></td>
+  </tr> 
+
+  <tr align="center"> 
+    <td>0</td> 
+    <td>MaxSoFar+A[0]=0+ -2 = -2  </td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td></td> 
+    <td>-2 &lt; 0 -&gt; 0</td> 
+    <td>0</td> 
+    <td>0</td> 
+    <td>0</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>1</td> 
+    <td>MaxSoFar+A[1]=0+ -3=-3</td> 
+	<td></td>
+	<td></td>
+    <td></td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>-3 &lt; 0 -&gt; 0</td> 
+    <td>0</td> 
+    <td>0</td> 
+    <td>0</td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>2</td> 
+    <td>0 + -4 = -4</td> 
+  </tr> 
+
+  <tr align="center" > 
+    <td></td> 
+    <td>-4 &lt; 0 -&gt; 0</td> 
+    <td>0</td> 
+    <td>0</td> 
+    <td>0</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>3</td> 
+    <td>0 + -3 = -3</td> 
+	<td></td> 
+	<td></td> 
+	<td></td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>-3 &lt; 0 -&gt; 0</td> 
+    <td>0</td> 
+    <td>0</td> 
+    <td>0</td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>4</td> 
+    <td>0 + 0 = 0</td> 
+    <td>0</td> 
+    <td>0</td> 
+    <td>0</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>5</td> 
+    <td>0 + 8 = 8</td> 
+    <td>8</td> 
+    <td>0</td> 
+    <td>5</td> 
+  </tr> 
+
+</table>  
+</br></br>
+
+<p>End Index = 5</p>
+</br>
+
+<table align="center" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;"> 
+  <tr align="center"> 
+    <th>CurrentIndex</th> 
+    <th>MaxSoFar</th> 
+    <th>MaxSum</th> 
+    <th>EndIndex</th> 
+    <th>StartIndex</th> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>0</td> 
+    <td>0</td> 
+	<td></td>
+	<td></td>
+  </tr> 
+
+  <tr align="center"> 
+    <td>5</td> 
+    <td>MaxSoFar+A[5]=0+8=8</td> 
+    <td>8</td> 
+    <td>5</td> 
+    <td>5</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>4</td> 
+    <td>MaxSoFar+A[4]=8+0=8</td> 
+    <td>8</td> 
+    <td>5</td> 
+    <td>5</td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>3</td> 
+    <td>8 + -3 = 5</td> 
+    <td>8</td> 
+    <td>5</td> 
+    <td>5</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>2</td> 
+    <td>5 + -4 = 1</td> 
+    <td>8</td> 
+    <td>5</td> 
+    <td>5</td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td>1</td> 
+    <td>1 + -3 = -2</td> 
+  </tr> 
+
+  <tr align="center"> 
+    <td></td> 
+    <td>-2 &lt; 0 -&gt; 0</td> 
+    <td>8</td> 
+    <td>5</td> 
+    <td>5</td> 
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td>0</td> 
+    <td>0 + -2 = -2</td> 
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr> 
+
+  <tr align="center" bgcolor="#C8C8C8"> 
+    <td></td> 
+    <td>-2 &lt; 0 -&gt; 0</td> 
+    <td>8</td> 
+    <td>5</td> 
+    <td>5</td> 
+  </tr> 
+
+</table> 
+</br></br>
+ 
+<p>Start index = 5</br>
+MaxSum = 8</br>
+</p>
+</br>
+
+<pre class="prettyprint">
+// Largest Sum Contiguous Subarray
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main()
+{
+  int n = 8; 
+  int a[n] = {-2, -3, 4, -1, -2, 1, 5, -3};
+  int ms = 0, s = 0, start = 0, end = 0;
+  for (int i =0; i &lt;n; i++)
+  {
+        s +=a[i];
+        if(s &lt; 0)
+        {
+            s = 0;
+        }
+        if(s &gt; ms)
+        {
+            ms = s;
+            end = i;
+        }
+  }
+  cout&lt;&lt;&quot;End is: &quot;&lt;&lt;a[end]&lt;&lt;endl;
+  s = 0;
+  ms = 0;
+  for(int i = end; i &gt;= 0; i--)
+  {
+      s += a[i];
+      if(s &lt; 0)
+      {
+          s = 0;
+      }
+      if(s &gt; ms)
+      {
+           ms = s;
+           start = i;
+      }
+  }
+  cout&lt;&lt;&quot;Start is: &quot;&lt;&lt;a[start]&lt;&lt;endl; 
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<h4>Find Missing numbers</h4>
+</br>
+
+<p><u>Full Working Program</u></p>
+</br>
+
+<pre class="prettyprint" id="xcode">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+using namespace std;
+
+
+int main()
+{
+    const static int N = 7;
+    int A[N] = {1, 2, 4, 6, 3, 7, 8};
+    //Given numbers in range from 1 to N+1
+    //Find 1 missing number
+    
+    
+    //To find 1 missing number
+    //Find sum of all the numbers from range of 1 to N+1
+    //Find sum of all given numbers
+    //Subtract GivenSum from Sum
+    int Sum = 0;
+    int GivenSum = 0;
+    for(int i = 0; i &lt;= N; i++)
+    {
+        Sum = Sum + i+1;
+    }
+    cout&lt;&lt;&quot;Sum of numbers from 1 to &quot;&lt;&lt;N+1&lt;&lt;&quot; is &quot;&lt;&lt;Sum&lt;&lt;endl;
+    
+    for(int i = 0 ; i &lt; N; i ++)
+    {
+        GivenSum = GivenSum + A[i];
+    }
+    cout&lt;&lt;&quot;Sum of given numbers is &quot;&lt;&lt;GivenSum&lt;&lt;endl;
+    
+    cout&lt;&lt;&quot;Missing number is &quot;&lt;&lt;Sum-GivenSum&lt;&lt;endl;
+    
+    //Find 2 missing numbers
+    const static int n = 8;
+    int B[n] = {10,4,3,5,7,8,9,1};
+    //Given numbers in range from 1 to n+2
+    //Find 2 missing numbers
+    
+    //To find 2 missing numbers
+    //Find sum of all the numbers from range of 1 to n+2
+    //Find sum of all given numbers
+    //Subtract GivenSum from Sum
+    //Now we have a+b
+    Sum = 0;
+    GivenSum = 0;
+    for(int i = 0; i &lt; n+2; i++)
+    {
+        Sum = Sum + i+1;
+    }
+    cout&lt;&lt;&quot;Sum of numbers from 1 to &quot;&lt;&lt;n+2&lt;&lt;&quot; is &quot;&lt;&lt;Sum&lt;&lt;endl;
+    
+    for(int i = 0 ; i &lt; n; i ++)
+    {
+        GivenSum = GivenSum + B[i];
+    }
+    cout&lt;&lt;&quot;Sum of given numbers is &quot;&lt;&lt;GivenSum&lt;&lt;endl;
+    
+    int AplusB = Sum - GivenSum;
+    cout&lt;&lt;&quot;a+b = &quot;&lt;&lt;AplusB&lt;&lt;endl;
+    
+    //Find product of all the numbers from range of 1 to n+2
+    //Find product of all given numbers
+    //Divide Product by GivenProduct
+    //Now we have ab
+    
+    int Product = 1;
+    int GivenProduct = 1;
+    
+    for(int i = 0; i &lt; n+2; i++)
+    {
+        Product = Product * (i+1);
+    }
+    cout&lt;&lt;&quot;Product of numbers from 1 to &quot;&lt;&lt;n+2&lt;&lt;&quot; is &quot;&lt;&lt;Product&lt;&lt;endl;
+    
+    for(int i = 0; i &lt; n; i++)
+    {
+        GivenProduct = GivenProduct * B[i];
+    }
+    cout&lt;&lt;&quot;Product of given numbers is &quot;&lt;&lt;GivenProduct&lt;&lt;endl;
+    
+    int AB = Product / GivenProduct;
+    cout&lt;&lt;&quot;ab = &quot;&lt;&lt;AB&lt;&lt;endl;
+    
+    //Now that we have a+b and ab
+    //a+b = Sum;
+    //ab = Product;
+    //a = Product/b;
+    //Product/b + b = Sum;
+    //Product + b^2 = Sum*b;
+    //b^2 - Sum*b + Product = 0;
+    //To find roots of a quadratic equation
+    //ax^2 + bx + c = 0;
+    //a = 1;
+    //b = -Sum;
+    //c = Product;
+    //Root 1 = (1/2a)*(-b + sqrt(b^2 - 4ac))
+    //Root 2 = (1/2a)*(-b - sqrt(b^2 - 4ac))
+    //Thus this becomes
+    //Root 1 = (1/2)*(-(-Sum) + sqrt((-Sum)^2 - 4*Product))
+    //Root 2 = (1/2)*(-(-Sum) - sqrt((-Sum)^2 - 4*Product))
+    //Which gives us
+    //Root 1 = (Sum + sqrt(Sum^2 - 4*Product))/2
+    //Root 2 = (Sum - sqrt(Sum^2 - 4*Product))/2
+    
+    int Root1 = 0;
+    int Root2 = 0;
+    Root1 = (AplusB + sqrtf((AplusB*AplusB) - 4*AB)) / 2;
+    Root2 = (AplusB - sqrtf((AplusB*AplusB) - 4*AB)) / 2;
+    cout&lt;&lt;&quot;The 2 missing numbers are &quot;&lt;&lt;Root1&lt;&lt;&quot; and &quot;&lt;&lt;Root2&lt;&lt;endl;  
+}</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<h4>Search an element in a sorted and rotated array</h4>
+</br></br>
+<p>
+<u>Solution</u>:-</br> 
+We first start by trying to find pivot element.</br> 
+Pivot is the element that divides the array into 2 sorted halves.</br> 
+We can chose the pivot to be the smallest element or the largest element of the array.</br> 
+In this case we chose it to be the largest element in the array.</br> 
+</p></br> 
+<p>Things to consider when finding the pivot</br> 
+<ul>
+<li>a[mid]</li>
+<li>leftmost element = a[low]</li>
+<li>rightmost element = a[high]</li> 
+<li>a[mid - 1]</li> 
+<li>a[mid + 1]</li>
+<li>low &lt; mid &lt; high</li> 
+</ul>
+</p></br> 
+<p>Consider the below example array, this array is sorted.</br> 
+A[] = {1, 2, 3, 4, 5}</br> 
+</p></br> 
+<p>Now this array can be rotated in 5 ways</p></br> 
+<ol>
+<li>		Pivot comes in extreme right</br> 
+1, 2, 3, 4, <b>5</b></br> 
+In this case the array is sorted and perform normal binary search</li>
+</br>
+<pre class="prettyprint">
+if( a[high] &gt; a[low] &amp;&amp; a[high] &gt; a[mid] &amp;&amp; a[high] &gt;= a[mid+1] &amp;&amp; a[high] &gt;= a[mid-1])
+{
+	return a[high];
+}
+</pre>
+</br>     
+<li>    Pivot comes in extreme left</br> 
+<b>5</b>, 1, 2, 3, 4   </br> 
+In this case the pivot is low</li>
+</br>
+<pre class="prettyprint">
+if(a[low] &gt; a[high] &amp;&amp; a[low] &gt; a[mid] &amp;&amp; a[low] &gt; a[mid+1] &amp;&amp; a[low] &gt; a[mid-1])
+{
+	return a[low];
+}</pre>
+</br>    
+<li>     Pivot comes in mid</br> 
+3, 4, <b>5</b>, 1, 2</li>
+</br>
+<pre class="prettyprint">
+if(a[mid] &gt; a[low] &amp;&amp; a[mid] &gt; a[high] &amp;&amp; a[mid] &gt; a[mid+1] &amp;&amp; a[mid] &gt; a[mid-1])
+{
+	return a[mid];
+}</pre>
+</br>  
+<li>      Pivot comes in left side of the array</br> 
+4, <b>5</b>, 1, 2, 3</br> 
+In this case the pivot may occur at mid -1 </li>
+</br>
+<pre class="prettyprint">
+if(a[mid-1] &gt; a[low] &amp;&amp; a[mid-1] &gt; a[high] &amp;&amp; a[mid-1] &gt; a[mid] &amp;&amp; a[mid-1] &gt; a[mid+1])
+{
+	low = low;
+	high = mid -1;
+	//Now see the error here
+	//if the pivot is mid-1
+	// then this program will give error
+	//Coz when you go and try to search in left half
+	// you get a[mid] = 5 and then when you check mid+1
+	// it goes out of scope
+	//trying to compare 5 to 1
+	//what is solution to this ?
+	//Check low &lt; mid &lt; high 
+}</pre>
+</br>
+<li>      Pivot comes in right side of the array</br>
+2, 3, 4, <b>5</b>, 1</br> 
+In this case the pivot may occur at mid+1
+</li></br> 
+</ol></br></br> 
+<p>Let's see the 5 cases again with above modification</br> 
+1, 2, 3, 4, <b>5</b></br> 
+<b>5</b>, 1, 2, 3, 4</br> 
+3, 4, <b>5</b>, 1, 2</br> 
+4, <b>5</b>, 1, 2, 3</br> 
+2, 3, 4, <b>5</b>, 1</br> 
+</p>
+</br> </br>
+<p>1, 2, 3, 4, 5, 6, <b>7</b></p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[high] &gt; a[low] &amp;&amp; a[high] &gt; a[mid])
+	{
+		return a[high];
+	}
+}</pre>
+</br></br> 
+<p><b>7</b>, 1, 2, 3, 4, 5, 6</p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[low] &gt; a[high] &amp;&amp; a[low] &gt; a[mid])
+	{
+		return a[low];
+	}
+}</pre>
+</br></br> 
+<p>4, 5, 6, <b>7</b>, 1, 2, 3</p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[mid] &gt; a[high] &amp;&amp; a[mid] &gt; a[low])
+	{
+		return a[mid];
+	}
+}</pre>
+</br></br> 
+<p>5, 6, <b>7</b>, 1, 2, 3, 4</p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[mid-1] &gt; a[high] &amp;&amp; a[mid-1] &gt; a[low] &amp;&amp; a[mid-1] &gt; a[mid])
+	{
+		return a[mid-1];
+	}
+}</pre>
+</br></br> 
+<p>3, 4, 5, 6, <b>7</b>, 1, 2</p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[mid+1] &gt; a[low] &amp;&amp; a[mid+1] &gt; a[high] &amp;&amp; a[mid+1] &gt; a[mid])
+	{
+		return a[mid+1];
+	}
+}</pre>
+</br></br> 
+<p>6, <b>7</b>, 1, 2, 3, 4, 5</p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[mid] &lt; a[low] &amp;&amp; a[mid] &lt; a[high])
+	{
+		if(a[mid] &gt; a[mid-1] &amp;&amp; a[mid] &lt; a[mid+1])
+		{
+			low = low;
+			high = mid-1;
+		}
+	}
+}</pre>
+</br></br> 
+<p>2, 3, 4, 5, 6, <b>7</b>, 1</p>
+</br>
+<pre class="prettyprint">
+if(low &lt; mid &lt; high)
+{
+	if(a[mid] &gt; a[low] &amp;&amp; a[mid] &gt; a[high])
+	{
+		if(a[mid] &gt; a[mid-1] &amp;&amp; a[mid] &lt; a[mid+1])
+		{
+			low = mid+1;
+			high = high;
+		}
+	}
+}
+
+
+if(mid = high &amp;&amp; low &lt; high)
+{
+	if(a[mid] &gt; a[low])
+	{
+		return a[mid];
+	}
+	else
+	{
+		return a[low]
+	}
+}
+
+if(mid = low &amp;&amp; high &gt; low)
+{
+	if(a[mid] &gt; a[high])
+	{
+		return a[mid]
+	}
+	else
+	{
+		return a[high]
+	}
+}</pre>
+</br></br> 
+<p>Think about duplicates, in that case we may just need to search in linear fashion</p>
+</br>
+
+<p><u>Full Working Program</u></p>
+</br>
+
+<pre class="prettyprint" id="xcode">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stdio.h&gt;
+#include &lt;queue&gt;
+#include &lt;math.h&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+using namespace std;
+ 
+const static int n = 9;
+ 
+void BS(int low, int high, int x, int a[])
+{
+    if(low &lt;= high)
+    {
+        cout&lt;&lt;&quot;Low is &quot;&lt;&lt;a[low]&lt;&lt;&quot; high is &quot;&lt;&lt;a[high]&lt;&lt;endl;
+        int mid = (low+high)/2;
+        
+        if(x == a[mid])
+        {
+            cout&lt;&lt;&quot;Element found at &quot;&lt;&lt;mid&lt;&lt;endl;
+            exit(0);
+        }
+        else
+            if(x &lt; a[mid])
+            {
+                cout&lt;&lt;&quot;Going left to find the element\n&quot;;
+                BS(low, mid-1, x, a);
+            }
+        else
+        {
+            cout&lt;&lt;&quot;Going right to find the element\n&quot;;
+            BS(mid+1, high, x, a);
+        }
+    }
+}
+ 
+void BinarySearch(int Pivot, int SearchElement, int a[])
+{
+    if(a[Pivot] == SearchElement)
+    {
+        cout&lt;&lt;&quot;Element found at &quot;&lt;&lt;Pivot&lt;&lt;endl;
+        exit(0);
+    }
+    
+    cout&lt;&lt;&quot;Finding the element\n&quot;;
+    
+    if(Pivot == 0)
+    {
+        //Element can be pivot or search in rest of the right half
+        BS(Pivot+1, n-1, SearchElement, a);
+    }
+    if(Pivot == n-1)
+    {
+        //Normal sorted array
+        BS(0, n-1, SearchElement, a);
+    }
+    
+    if(a[0] &lt;= SearchElement &amp;&amp; SearchElement &lt;= a[Pivot])
+    {
+        BS(0, Pivot, SearchElement, a);
+    }
+    if(a[Pivot+1] &lt;= SearchElement &amp;&amp; SearchElement &lt;= a[n-1])
+    {
+        BS(Pivot+1, n-1, SearchElement, a);
+    }
+}
+ 
+void FindPivot(int low, int high, int a[], int SearchElement)
+{
+    if(low &lt;= high)
+    {
+        int mid = (low+high)/2;
+        
+        //1,2,3,4,5
+        if(a[mid-1] &lt; a[mid] &amp;&amp; a[mid] &lt; a[mid+1] &amp;&amp; a[low] &lt; a[mid] &amp;&amp; a[mid] &lt; a[high] &amp;&amp; a[low] &lt; a[high])
+        {
+            //Do normal binary search
+            cout&lt;&lt;&quot;The pivot is at extreme right\n&quot;;
+            BinarySearch(high, SearchElement, a);
+        }
+        
+        //5,1,2,3,4
+        if(a[mid-1] &lt; a[mid] &amp;&amp; a[mid] &lt; a[mid+1] &amp;&amp; a[low] &gt; a[mid] &amp;&amp; a[mid] &lt; a[high] &amp;&amp; a[low] &gt; a[high])
+        {
+            //Pivot at the extreme left
+            cout&lt;&lt;&quot;The pivot is at extreme left\n&quot;;
+            BinarySearch(low, SearchElement, a);
+        }
+        
+        //3,4,5,1,2
+        if(a[mid-1] &lt; a[mid] &amp;&amp; a[mid] &gt; a[mid+1] &amp;&amp; a[low] &lt; a[mid] &amp;&amp; a[mid] &gt; a[high])
+        {
+            //Pivot is in the middle
+            cout&lt;&lt;&quot;Pivot is in the middle\n&quot;;
+            BinarySearch(mid, SearchElement, a);
+        }
+        
+        //2,3,4,5,1
+        if(a[mid-1] &lt; a[mid] &amp;&amp; a[mid] &lt; a[mid+1] &amp;&amp; a[low] &lt; a[mid] &amp;&amp; a[mid] &gt; a[high] &amp;&amp; a[low] &gt; a[high])
+        {
+            //Pivot is in right side
+            cout&lt;&lt;&quot;Going right\n&quot;;
+            FindPivot(mid+1, high, a, SearchElement);
+        }
+        
+        //4,5,1,2,3
+        if(a[mid-1] &gt; a[mid] &amp;&amp; a[mid] &lt; a[mid+1] &amp;&amp; a[low] &gt; a[mid] &amp;&amp; a[mid] &lt; a[high] &amp;&amp; a[low] &gt; a[high])
+        {
+            //Pivot is in left side
+            cout&lt;&lt;&quot;Going left\n&quot;;
+            FindPivot(low, mid-1, a, SearchElement);
+        }
+    }
+}
+ 
+ 
+int main()
+{
+    int a[] = {9,1,2,3,4,5,6,7,8};
+    FindPivot(0, n-1, a, 1);
+}</pre>
+</br></br>
+
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+<!--
+<h4></h4>
+</br>
+
+<p></p>
+</br>
+
+<pre class="prettyprint">
+</pre>
+</br></br>
+
+<p><u>Full Working Program</u></p>
+</br>
+
+<pre class="prettyprint" id="xcode">
+</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+###################################################################################################################################################
+</br>
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+###################################################################################################################################################
+
+<h4></h4>
+</br>
+<p></p>
+</br>
+
+<pre class="prettyprint">
+</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+###################################################################################################################################################
+-->
+<h4>
+Count Strictly Increasing Subarrays</br>
+Given an array of integers, count number of subarrays (of size more than one) that are strictly increasing.</br>
+Expected Time Complexity : O(n)</br>
+Expected Extra Space: O(1)</br>
+</br>
+Examples:</br>
+</br>
+Input: arr[] = {1, 4, 3}</br>
+Output: 1</br>
+There is only one subarray {1, 4}</br>
+</br>
+Input: arr[] = {1, 2, 3, 4}</br>
+Output: 6</br>
+There are 6 subarrays {1, 2}, {1, 2, 3}, {1, 2, 3, 4}</br>
+                      {2, 3}, {2, 3, 4} and {3, 4}</br>
+</br>
+Input: arr[] = {1, 2, 2, 4}</br>
+Output: 2</br>
+There are 2 subarrays {1, 2} and {2, 4}
+</h4>
+</br></br>
+
+
+<p>
+Let us first understand how many sub arrays can be formed from an array.</br>
+Example: {1,2,3,4}</br>
+SubArrays: {1, 2}, {1, 2, 3}, {1, 2, 3, 4}</br>
+{2, 3}, {2, 3, 4} and {3, 4}(Note: we are not counting the individual sub arrays {1},{2},{3},{4})</br>
+Total number of sub arrays formed = 6</br>
+Total number of elements in the original array = 4</br>
+There fore we can say that Total number of sub arrays formed = (Total number of elements in the original array)*(Total number of elements in the original array - 1)/2</br>
+Thus all we do is:</br>
+</p>
+</br>
+
+<pre class="prettyprint">
+output = 0;
+count = 1;
+for(i = 0 to n)
+{
+   if(a[i]&lt;a[i+1])
+   {
+     count++;
+   }
+   else
+   {
+     output += count*(count-1)/2;
+     count = 1;
+   }
+}
+// If all thearray elements are increasing
+// then it would never reach the else block
+// to counter attack this case we perform 
+// else block once more here.
+output += factorial(count-1);</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+
+<h4>
+Find minimum difference between any two elements</br>
+Given an unsorted array, find the minimum difference between any pair in given array.</br>
+</br>
+Examples :</br>
+</br>
+Input  : {1, 5, 3, 19, 18, 25};</br>
+Output : 1</br>
+Minimum difference is between 18 and 19</br>
+</br>
+Input  : {30, 5, 20, 9};</br>
+Output : 4</br>
+Minimum difference is between 5 and 9</br>
+</br>
+Input  : {1, 19, -4, 31, 38, 25, 100};</br>
+Output : 5</br>
+Minimum difference is between 1 and -4
+</h4>
+</br></br>
+
+<p>
+O(n^2) take every element and find it's difference with all other element and record the 2 elements with min difference</br>
+O(nlogn) sort the array and find difference between arr[i] and arr[i+1] find the pairs
+</p>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>Find lost element from a duplicated array</br>
+Given two arrays which are duplicates of each other except one element, that is one element from one of the array is missing, we need to find that missing element.</br>
+</br>
+Examples:</br>
+</br>
+Input:  arr1[] = {1, 4, 5, 7, 9}</br>
+        arr2[] = {4, 5, 7, 9}</br>
+Output: 1</br>
+1 is missing from second array.</br>
+</br>
+Input: arr1[] = {2, 3, 4, 5}</br>
+       arr2[] = {2, 3, 4, 5, 6}</br>
+Output: 6</br>
+6 is missing from first array.
+</h4>
+</br>
+
+<p>
+Sum both the arrays and find their difference that can be the missing element. (Haven't thought through this solution and it's extreme cases)</br>
+put the longer array in hash table and iterate through each element of shorter array and find  the missing element.</br>
+O(n^2) iterate over each element of array and try to find that element in other array.
+</p>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>
+Count minimum steps to get the given desired array</br>
+</br>
+Consider an array with n elements and value of all the elements is zero. We can perform following operations on the array.</br>
+</br>
+Incremental operations:Choose 1 element from the array and increment its value by 1.</br>
+Doubling operation: Double the values of all the elements of array.</br>
+We are given desired array target[] containing n elements.</br> 
+Compute and return the smallest possible number of the operations needed to change the array from all zeros to desired array.</br>
+</br>
+Sample test cases:</br>
+</br>
+Input: target[] = {2, 3}</br>
+Output: 4</br>
+To get the target array from {0, 0}, we </br>
+first increment both elements by 1 (2 </br>
+operations), then double the array (1 </br>
+operation). Finally increment second</br>
+element (1 more operation)</br>
+</br>
+Input: target[] = {2, 1}</br>
+Output: 3</br>
+One of the optimal solution is to apply the </br>
+incremental operation 2 times to first and </br>
+once on second element.</br>
+</br>
+Input: target[] = {16, 16, 16}</br>
+Output: 7</br>
+The output solution looks as follows. First </br>
+apply an incremental operation to each element.</br> 
+Then apply the doubling operation four times. </br>
+Total number of operations is 3+4 = 7
+</h4>
+</br></br></br>
+
+<p>
+<ul>
+	<li>The first thing we do is to find the lowest element inside the array, let's call the element as target value.</li>
+	<li>Our main aim is to convert 0 into this target element. </li>
+	<li>Let us take an example along the way to understand the solution a little better. Input[] = {7, 10, 8, 11, 50}</li>
+	<li>The lowest element inside this Input array is 7.</li>
+	<li>Now we want to make 0 into 7.</li>
+	<li>We can do 2 things either add 1 or multiply by 2.</li>
+	<li>Let's call 0 as our current element and 7 as target element. </li>
+	<li>(CurrentElement = 0, NumSteps = 0, TargetElement = 7)</li>
+	<li>The first step we do is to add 1 to make that 0 into 1 and NumSteps++ </li>
+	<li>(CurrentElement = 1, NumSteps = 1, TargetElement = 7)</li>
+	<li>if current element &lt; target element </li>
+	<li>then we can do 2 things as mentioned above</li>
+	<li>if current element * 2 &lt;= target element then current element = current element * 2 </li>
+	<li>(CurrentElement = 1*2=2, NumSteps = 1+1=2, TargetElement = 7)</li>
+	<li>(CurrentElement = 2*2=4, NumSteps = 2+1=3, TargetElement = 7)</li>
+	<li>(CurrentElement = 4*2=8 uh oh we have a proablem here as 8 &gt; Target element, NumSteps = 3, TargetElement = 7)</li>
+	<li>else if current element * 2 &gt; target element then check if current element + 1 &lt;= target element</li>
+	<li>(CurrentElement = 4+1=5, NumSteps = 3+1=4, TargetElement = 7)</li>
+	<li>(CurrentElement = 5*2=10 but 10 &gt; 7 so 5+1=6, NumSteps = 4+1=5, TargetElement = 7)</li>
+	<li>(CurrentElement = 6*2=12 but 12 &gt; 7 so 6+1=7, NumSteps = 5+1=6, TargetElement = 7)</li>
+	<li>Once Current element == Target element we then stop and see what are the number of steps.</li>
+	<li>NumSteps are the minimum number of steps every element needs, from here on we know that we can never multiply by two because the proablem states that &quot;Doubling operation: Double the values of ALL the elements of array.&quot; Notice the ALL, so if we double the min value obtained will no longer match the min value inside the array.</li>
+	<li>That is if we use double 7 of the input array (the input array consists of all the 0s) will becoming 14 therefore no longer matching 7 value.</li>
+	<li>So hence forth we can only perform add 1 as the poeration.</li>
+	<li>So for our input array of Input[] = {7, 10, 8, 11, 50}</li>
+	<li>we have NumSteps = 6 to make 0 into 7</li>
+	<li>then NumSteps to make 0 into 10 is [NumSteps to make 0 into 7 + NumSteps to make 7 into 10 by just adding 1s] thus it is 6+(10-7) = 6+3 = 9</li>
+	<li>then NumSteps to make 0 into 8 is [NumSteps to make 0 into 7 + NumSteps to make 7 into 8 by just adding 1s] thus it is 6+(8-7) = 6+1 = 7</li>
+	<li>then NumSteps to make 0 into 11 is [NumSteps to make 0 into 7 + NumSteps to make 7 into 11 by just adding 1s] thus it is 6+(11-7) = 6+4 = 10</li>
+	<li>then NumSteps to make 0 into 50 is [NumSteps to make 0 into 7 + NumSteps to make 7 into 50 by just adding 1s] thus it is 6+(50-7) = 6+43 = 49</li>
+	<li>So the total number of steps is 6+10+8+11+50 = 85</li>
+	<li>But you see doubling all the elements together is counted as 1</li>
+        <li>So the total number of steps is not 85</li>
+        <li>(NumSteps to make 0 into 1 + NumSteps to make <b>1</b> into 7) + (NumSteps to make 0 into 1 + NumSteps to make 7 into 10) + (NumSteps to make 0 into 1 + NumSteps to make 7 into 8) + (NumSteps to make 0 into 1 + NumSteps to make 7 into 11) + (NumSteps to make 0 into 1 + NumSteps to make 7 into 50)</li>
+        <li>(1+5)+(1+3)+(1+1)+(1+4)+(1+43) = 61</li>
+        <li>So the total number of steps is 61</li>
+</ul>
+</p>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>
+Find minimum number of merge operations to make an array palindrome</br>
+</br>
+Given an array of positive integers. We need to make the given array a Palindrome. Only allowed operation on array is merge. Merging two adjacent elements means replacing them with their sum. The task is to find minimum number of merge operations required to make given array a Palindrome.</br></br>
+
+To make an array a palindromic we can simply apply merging operations n-1 times where n is the size of array (Note a single element array is alway palindrome similar to single character string). In that case, size of array will be reduced to 1. But in this problem we are asked to do it in minimum number of operations.</br></br>
+
+Example:</br></br>
+
+Input : arr[] = {15, 4, 15}</br>
+Output : 0</br>
+Array is already a palindrome. So we</br>
+do not need any merge operation.</br></br>
+
+Input : arr[] = {1, 4, 5, 1}</br>
+Output : 1</br>
+We can make given array palindrome with</br>
+minimum one merging (merging 4 and 5 to make 9)</br></br>
+
+Input : arr[] = {11, 14, 15, 99}</br>
+Output : 3</br>
+We need to merge all elements to make</br>
+a palindrome.</br></br>
+
+Input : arr[] = {1, 2, 3}</br>
+Output : 1</br>
+We can make given array palindrome with</br>
+minimum one merging (merging 1 and 2)</br></br>
+
+Expected time complexity is O(n).
+</h4>
+</br>
+          
+<p>
+<ol>
+	<li>Check if the size is 1.</li>
+	<li>Start checking from outside of the array, let the 0th index position be L and n-1th position index be R.</li>
+	<li>If Input[L]==Input[R] then L++ and R--</li>
+	<li>else check if Input[L] &lt; Input[R] then merge Input[L] and Input[L+1] (Input[L+1]+=Input[L] and L++) and MergeOperation++</li>
+	<li>else if Input[L] &gt; Input[R] then merge Input[R] and Input[R-1] (Input[R-1]+=Input[R] and R--) and MergeOperation++</li>
+	<li>Repeat steps 3 to 5 until L &lt;= R (the moment L becomes greater than R we stop)</li>
+	<li>At the end we return MergeOperation as the total number of Merge operations performed.</li>
+</ol>
+</p>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+<!--###################################################################################################################################################-->
+
+<h4>
+Minimize the maximum difference between the heights</br>
+Given heights of n towers and a value k. We need to either increase or decrease height of every tower by k (only once) where k > 0. The task is to minimize the difference between the heights of the longest and the shortest tower after modifications, and output this difference. </br>
+Examples:</br></br>
+
+Input  : arr[] = {1, 15, 10}, k = 6</br>
+Output : arr[] = {7, 9, 4}</br>
+         Maximum difference is 5.</br>
+Explanation : We change 1 to 6, 15 to </br>
+9 and 10 to 4. Maximum difference is 5</br>
+(between 4 and 9). We can't get a lower
+difference.</br></br>
+
+Input : arr[] = {1, 5, 15, 10} </br>
+        k = 3   </br>
+Output : arr[] = {4, 8, 12, 7}</br>
+Maximum difference is 8</br></br>
+
+Input : arr[] = {4, 6} </br>
+        k = 10</br>
+Output : arr[] = {14, 16} OR {-6, -4}</br>
+Maximum difference is 2</br></br>
+
+Input : arr[] = {6, 10} </br>
+        k = 3</br>
+Output : arr[] = {9, 7}</br> 
+Maximum difference is 2</br></br>
+
+Input : arr[] = {1, 10, 14, 14, 14, 15}</br>
+        k = 6 </br>
+Output: arr[] = {7, 4, 8, 8, 8, 9} </br>
+Maximum difference is 5</br></br>
+
+Input : arr[] = {1, 2, 3}</br>
+        k = 2 </br>
+Output: arr[] = {3, 4, 5}</br> 
+Maximum difference is 2
+</h4>
+</br>
+
+<p>
+<ul>
+	<li> Find the lowest and the highest elements.</li>
+	<li> If k >= |high-low| then add/sub k from all the elements and call it a day.</li>
+	<li> else n_low = low+k and n_high = high - k</li>
+	<li> iterate through all elements one by one,</li>
+	<li> For each element, first increment the element and check absolute difference between the incremented element and n_low and n_high. Record the lowest diff call it i_d</li>
+	<li> then decrement the element and again calculate the absolute difference between n_low and n_high. Record the lowest diff call it d_d</li>
+	<li> Check what is small between i_d and d_d and accordingly increment or decrement the element</li>
+	<li> Repeat for all the elements</li>
+</ul>
+</p>
+</br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+<!--###################################################################################################################################################-->
+
+<!--************************************************************************************-->
+
+<!--
+<h2 id="Chapter2">Chapter 2 Cheats</h2>
+</br></br>
+
+<h4></h4>
+</br>
+
+<p></p>
+</br>
+
+<pre class="prettyprint">
+</pre>
+</br></br>
+
+<hr style="border-style: dashed; width:85%;"><hr style="border-style: dashed; width:85%;">
+</br>
+
+###################################################################################################################################################
+<hr style="border-style: double; width:85%;"><hr style="border-style: double; width:85%;">
+</br></br>-->
+<!--************************************************************************************-->
+
+</div>  	
+  <div class="social_container">
+    <table class="social"> 
+	  <tr>
+	    <th > <a href="https://www.facebook.com/to.hell.with.u"><img src="img/Facebook.png" alt="Facebook" class="hvr-grow"></a> </th>
+	    <th > <a href="https://twitter.com/priyankakhire"><img src="img/Twitter.png" alt="Twitter" class="hvr-grow"></a> </th>
+	    <th > <a href="https://www.linkedin.com/in/priyankakhire"><img src="img/Linkedin.png" alt="Linkedin" class="hvr-grow"></a> </th>
+	    <th > <a href="https://www.instagram.com/miss_photoshop/"><img src="img/Instagram.png" alt="Instagram" class="hvr-grow"></a> </th>
+	    <th > <a href="https://in.pinterest.com/priyankakhire/"><img src="img/Pinterest.png" alt="Pinterest" class="hvr-grow"></a> </th>
+        <th > <a href="https://github.com/PriyankaKhire"><img src="img/Github.png" alt="Github" class="hvr-grow"></a> </th>
+	  </tr>	
+    </table>
+  </div>
+</div>
+
+<!-- Initialize Smooth Scroll. -->
+<script>
+  smoothScroll.init();
+</script>
+	  
+</body>
+</html> 

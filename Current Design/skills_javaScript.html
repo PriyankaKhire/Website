@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+//constant
+var th_count = 0;
+
+//change these if you want
+var skip_years = 1;
+var bar_fill_color = "#474747";
+
+function year_table_generator() {
+var year_table = document.createElement("TABLE");
+    year_table.setAttribute("id", "year_table");
+var myDiv = document.getElementById("myDiv");
+    myDiv.appendChild(year_table);
+
+var year_tr = document.createElement("TR");
+	year_tr.setAttribute("id", "year_tr");
+	document.getElementById("year_table").appendChild(year_tr);
+	
+	for(i = 2006; i <= 2016; i=i+skip_years+1) {
+	    var year_th = document.createElement("TH");
+        var year_cell = document.createTextNode(i);
+            year_th.appendChild(year_cell);
+            document.getElementById("year_tr").appendChild(year_th);
+			year_th.style.width = "25vw";
+			year_th.style.border = "2px dotted #a1a1a1";
+			year_th.style.borderRadius = "100%";
+			year_th.style.padding = "1.5% 0.5%";
+			
+			th_count++;
+		
+		//dotted lines
+		for(j = 0; j <= skip_years; j++) {
+			var year_hr = document.createElement("TH");
+				year_hr.innerHTML = '<hr style="border-top: 2px dotted #a1a1a1;">';
+				document.getElementById("year_tr").appendChild(year_hr);
+				year_hr.style.width = "25vw";
+				//dotted lines in between
+				//if(j != skip_years-1) {
+					//year_hr.style.borderRight = "2px dotted #a1a1a1";
+				//}
+				th_count++;
+			}
+	}
+	var year_th = document.createElement("TH");
+    var year_cell = document.createTextNode(2017);
+        year_th.appendChild(year_cell);
+        document.getElementById("year_tr").appendChild(year_th);
+    	year_th.style.width = "25vw";
+		year_th.style.border = "2px dotted #a1a1a1";
+		year_th.style.borderRadius = "100%";
+		year_th.style.padding = "1.5% 0.5%";
+		
+		th_count++;
+		
+
+
+}
+
+function bar_generator(table_id, start, end, tr_id) {
+
+//Empty tr and td
+var empty_tr = document.createElement("TR");
+	empty_tr.setAttribute("id", "empty_tr"+tr_id);
+	document.getElementById(table_id).appendChild(empty_tr);
+var empty_td = document.createElement("TD");
+	document.getElementById("empty_tr"+tr_id).appendChild(empty_td);
+	//Space between 2 rows
+	empty_td.style.height = "1vw";
+	
+var bar_tr_bottom = document.createElement("TR");
+	bar_tr_bottom.setAttribute("id", "bar_tr_bottom"+tr_id);
+	document.getElementById(table_id).appendChild(bar_tr_bottom);
+	
+
+var bar_tr = document.createElement("TR");
+	bar_tr.setAttribute("id", "bar_tr"+tr_id);
+	document.getElementById(table_id).appendChild(bar_tr);
+	
+var bar_tr_top = document.createElement("TR");
+	bar_tr_top.setAttribute("id", "bar_tr_top"+tr_id);
+	document.getElementById(table_id).appendChild(bar_tr_top);
+	
+	for(i = 0; i<th_count; i++) {
+	    var bar_td_bottom = document.createElement("TD");
+		var bar_td = document.createElement("TD");
+		var bar_td_top = document.createElement("TD");
+	    if(i >= start && i <= end) {
+			    bar_td.setAttribute("id", "bar_td_fill");
+				document.getElementById("bar_tr"+tr_id).appendChild(bar_td);
+				bar_td.style.backgroundColor = bar_fill_color;
+				bar_td.style.color = "#999";
+				bar_td.style.textShadow = "0px 3px 8px #2a2a2a";
+				if(i == Math.round((start+end)/2)) {
+					var bar_cell = document.createTextNode(tr_id);
+					bar_td.appendChild(bar_cell);
+					bar_td.style.fontSize = "150%";
+				}
+		} else {
+				bar_td.setAttribute("id", "bar_td");
+				document.getElementById("bar_tr"+tr_id).appendChild(bar_td);
+				//bar_td.style.backgroundColor = "blue";
+				
+		}
+		bar_td_bottom.setAttribute("id", "bar_td_bottom");
+		document.getElementById("bar_tr_bottom"+tr_id).appendChild(bar_td_bottom);
+		bar_td_bottom.style.width = "25vw";
+		//Space between top border and fill bar
+		bar_td_bottom.style.height = "0.2vw";
+		bar_td_bottom.style.borderTop = "1px dotted #a1a1a1";
+		
+		bar_td.style.width = "25vw";
+		//Width of fill bar
+		bar_td.style.height = "2vw";
+		
+		bar_td_top.setAttribute("id", "bar_td_top");
+		document.getElementById("bar_tr_top"+tr_id).appendChild(bar_td_top);
+		bar_td_top.style.width = "25vw";
+		//Space between bottom border and fill bar
+		bar_td_top.style.height = "0.2vw";
+		bar_td_top.style.borderBottom = "1px dotted #a1a1a1";
+		
+		if(i == 0) {
+			bar_td_bottom.style.borderLeft = "1px dotted #a1a1a1";
+			bar_td.style.borderLeft = "1px dotted #a1a1a1";
+			bar_td_top.style.borderLeft = "1px dotted #a1a1a1";
+		}
+		if(i == th_count-1) {
+			bar_td_bottom.style.borderRight = "1px dotted #a1a1a1";
+			bar_td.style.borderRight = "1px dotted #a1a1a1";
+			bar_td_top.style.borderRight = "1px dotted #a1a1a1";
+		}
+	}
+
+}
+
+function bar_table_generator() {
+var bar_table = document.createElement("TABLE");
+    bar_table.setAttribute("id", "bar_table");
+var myDiv = document.getElementById("myDiv");
+    myDiv.appendChild(bar_table);
+	bar_table.style.borderCollapse = "collapse";
+	
+bar_generator("bar_table", 15, 20, "one");
+bar_generator("bar_table", 2, 15, "two");
+bar_generator("bar_table", 0, 10, "three");
+bar_generator("bar_table", 10, 11, "four");
+}
+
+</script>
+<style>
+#myDiv{
+	width: 75vw;
+	padding: 5%;
+}
+</style>
+</head>
+<body>
+
+
+<div id="myDiv">
+</div>
+
+<script>
+year_table_generator();
+bar_table_generator();
+</script>
+
+</body>
+</html>

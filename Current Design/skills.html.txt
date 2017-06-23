@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+headders {
+border-collapse: collapse;
+}
+
+th {width: 25vw;}
+td {
+width: 25vw;
+color:white;
+}
+.c {
+		border: 2px dotted #a1a1a1;
+        border-radius: 100%;
+}
+.bar {
+background-color:blue;
+color:blue;
+}
+</style>
+</head>
+<body>
+
+<table class = "headders">
+    <tr>
+    <th align="left" class="c">2009</th>
+    <th></th><th></th><th></th><th></th>
+    <th align="left">2010</th>
+    <th></th><th></th><th></th><th></th>
+    <th align="left">2011</th>
+    <th></th><th></th><th></th><th></th>
+    <th align="left">2012</th>
+    <th></th><th></th><th></th><th></th>
+    </tr>
+</table>
+
+<table>
+	<tr>
+        <td class = "bar">1</td><td class = "bar">2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+        <td> 4</td>
+        <td class = "bar"> </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

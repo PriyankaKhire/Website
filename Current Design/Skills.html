@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Priyanka Khire</title>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">  
+  <meta name="author" content="Priyanka Khire">
+  <meta name="description" content="About Me page">
+  <meta name="keywords" content="Resume, Software Developer, Software Engineer, Projects, Programs, C++, Programming Practice">
+
+  <!--Browser Icon -->
+  <link rel="icon" href="http://graph.facebook.com/1250271614/picture?type=small">
+
+  <!-- Load the jquery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  <!-- Load the jquery library for animating box shadow -->
+  <script src="https://bitstorm.org/jquery/shadow-animation/jquery.animate-shadow.js"></script>
+
+  <!-- Load in the css style sheet -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+
+  <!-- Load in the javascript script-->
+  <script src="js/script.js" type="text/javascript"></script>
+	
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="font/entypo/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+
+  <script>
+  
+    //Assign variable to get max width
+	var max_width = 0;
+	
+	//Assigh a global array
+	var skills_array = [];
+	
+    function row(td_array, row_name, table_name) {
+	  //Create row
+	  var tr = document.createElement("TR");
+	  tr.setAttribute("id", "tr_"+row_name);
+	  document.getElementById(table_name).appendChild(tr);
+	  	  
+	  
+	  //Create the tds
+	  for(var i = 0; i<td_array.length; i++)
+	  {
+	    var td = document.createElement("TD");
+		td.setAttribute("id", "td_"+td_array[i]);
+		tr.appendChild(td);
+		
+		//Add text to cell
+		var skill_name = document.createElement("SPAN");
+		skill_name.setAttribute("id", "skill_name_"+td_array[i]);
+		skill_name.innerHTML = td_array[i];
+		td.appendChild(skill_name);
+		
+		//Add td styling
+		td.style.borderRadius = "100%";
+		//td.style.border = "1px solid #ccc";
+		td.style.fontFamily = "Comfortaa, cursive" ;
+		td.style.transition = "all 0.5s ease-in-out";
+		
+		//Add skill info
+		var skill_info = document.createElement("SPAN");
+		skill_info.setAttribute("id", "skill_info_"+td_array[i]);
+		skill_info.innerHTML = "Some info here";
+		skill_name.appendChild(skill_info);
+		
+		//Add styling to this info
+		skill_info.style.position = "absolute";
+		skill_info.style.width = "inherit";
+		skill_info.style.height = "inherit";
+		skill_info.style.overflow = "hidden";
+		skill_info.style.opacity = 0;
+		skill_info.style.transition = "all 1s ease-in-out 0.4s";
+		skill_info.style.transform = "scale(0)";
+		
+		
+		//Calculate cell width
+		var width = (td.clientWidth + 1);
+		if (width > max_width)
+		{
+		  max_width = width;
+		}
+		
+		//Push it in array
+		skills_array.push(td_array[i]);
+		
+	  }  
+	}
+	
+	function assign_height_width_hover_effects()
+	{
+	  //Assigh height and width to all cells in that row
+	  for(var i = 0; i<skills_array.length; i++)
+	  {
+	    var td = document.getElementById("td_"+skills_array[i]);
+		var skill_name = document.getElementById("skill_name_"+skills_array[i]);
+		var skill_info = document.getElementById("skill_info_"+skills_array[i]);
+		
+		//Add styling to td
+		td.style.width = max_width+"px";
+		td.style.height = max_width+"px";
+		td.style.textAlign = "center";	
+		td.style.boxShadow = "rgb(0, 0, 0) 0px 0px 0px 0px inset";
+		
+		 
+		$(td).hover(
+		function(){
+          $(this).stop().animate({boxShadow: '0 0 '+max_width+'px'}, 'fast');
+		  //$(this).stop().animate({"opacity": 0});
+          }, 
+		function(){
+          $(this).stop().animate({boxShadow: '0 0 0'}, 'fast');
+		  //$(this).stop().animate({"opacity": 1});
+        }
+		);
+		
+	  }
+	}
+  
+    function skills_table_generator(body_skills_table_name, s_array, info_text) {
+	
+	  //Create skills info section
+	  var skills_info = document.createElement("p");
+	  skills_info.setAttribute("id", "skill_section_info");
+	  var text = document.createTextNode(info_text);
+	  skills_info.appendChild(text);
+	  
+	  //Append to body div
+	  var body_skills_table = document.getElementById(body_skills_table_name);
+	  body_skills_table.appendChild(skills_info);
+	  
+	  //Create skills table section
+	  var skill_table = document.createElement("TABLE");
+      skill_table.setAttribute("id", "skill_table_"+body_skills_table_name);
+	  
+	  //Append to body div
+	  body_skills_table.appendChild(skill_table);
+	  
+	  // Add some styling to skill_table
+	  skill_table.style.margin = "0 auto";
+	  
+	  //Add rows
+	  var row_length = s_array.length;
+	  for(var i = 0; i <row_length;  i++)
+	  {
+	    row(s_array[i], "row"+i, "skill_table_"+body_skills_table_name);
+	  }
+	  
+	  assign_height_width_hover_effects();
+	}
+  </script>
+</head>
+<body>
+<div id="main">
+	<div class="head-content">	
+      
+
+	  <!-- Side push menu -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <a href="Program.html#Programs"><b>Programs</b></a>
+
+        <a href="Program.html#Chapter0">Chapter 0</a>
+        <a href="Program.html#Chapter0.5">Chapter 0.5</a>
+        <a href="Program.html#Chapter1">Chapter 1</a>
+        <!--<a href="Program.html#Chapter2">Chapter 2</a>
+        <a href="Program.html#Chapter3">Chapter 3</a>-->
+
+      </div>	  
+	  <!--End of side push menu -->
+	  
+	  <table cellpadding=20% class="menu"> 
+      <tr>
+	  <!-- Add the menu icon -->
+	    <th class="menu_item menu_icon" onclick="openNav()"><a href="#" >i</a></th>
+        <th class="menu_item"> <a href="#" >About</a> </th>
+		<th class="menu_item"> <a href="#" >Projects</a> </th>
+		<th class="menu_item"> <a href="#" >Experience</a> </th>
+		<th class="menu_item"> <a href="Program.html" >Programs</a> </th>
+		<th class="menu_item"> <a href="#" >Edcuation</a> </th>
+		<th class="menu_item"> <a href="#" >Skills</a> </th>
+		<th class="menu_item"> <a href="#" >Credits</a> </th>
+      </tr>	
+	  </table>				
+	</div>
+	
+	  
+	<div class="menu_name">Skills</div>
+	<hr class = "main_hr">
+	  
+	<div class="content">	
+      <p>This is the skills section, write something about the skills here</p></br></br>
+	  
+	  <!--Align the div in center and reduce its width -->
+      <div id="body_skills_table1" style="width:85%; margin: 0 auto;"></div>
+	  <script>
+	    var info_text = "Some info here.";
+	    var skills1 = [
+		["Skill 1","Skill 2","Skill 333333333"],
+		["Skill 111111111111111116666666611","Skill 22","Skill 333"],
+		["Skill 111111116666666611","Skill 226","Skill 33666663"]
+		];
+		skills_table_generator("body_skills_table1", skills1, info_text);
+	  </script>
+	  
+	  </br></br>
+	  
+	  <div id="body_skills_table2" style="width:85%; margin: 0 auto;"></div>
+	  <script>
+	    var info_text = "Some more info here";
+	    var skills2 = [
+		["s1","s2","s3"],
+		["sk1","sk2","sk3"],
+		["ski1","ski2"]
+		];
+		skills_table_generator("body_skills_table2", skills2, info_text);
+	  </script>
+	  
+	</div>  	
+	
+	<div class="social_container">
+    <table class="social"> 
+	  <tr>
+	    <th > <a href="https://www.facebook.com/to.hell.with.u"><img src="img/Facebook.png" alt="Facebook" class="hvr-grow"></a> </th>
+	    <th > <a href="https://twitter.com/priyankakhire"><img src="img/Twitter.png" alt="Twitter" class="hvr-grow"></a> </th>
+	    <th > <a href="https://www.linkedin.com/in/priyankakhire"><img src="img/Linkedin.png" alt="Linkedin" class="hvr-grow"></a> </th>
+	    <th > <a href="https://www.instagram.com/miss_photoshop/"><img src="img/Instagram.png" alt="Instagram" class="hvr-grow"></a> </th>
+	    <th > <a href="https://in.pinterest.com/priyankakhire/"><img src="img/Pinterest.png" alt="Pinterest" class="hvr-grow"></a> </th>
+            <th > <a href="https://github.com/PriyankaKhire"><img src="img/Github.png" alt="Github" class="hvr-grow"></a> </th>
+	  </tr>	
+    </table>
+	</div>
+</div>	  
+</body>
+</html>
