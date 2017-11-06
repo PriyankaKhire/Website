@@ -1,0 +1,87 @@
+int NumberLine[4];
+int FoundInArray[4];
+int ShortNumberLine[2];
+int ShortFoundInArray[2];
+ 
+void SortNumberLine()
+{
+	MergeSort NumberLine Array along with exchange in FoundInArray;
+}
+ 
+void SortShortNumberLine()
+{
+	if(ShortNumberLine[0] > ShortNumberLine[1]
+	{
+		swap(ShortNumberLine[0], ShortNumberLine[1]);
+		swap(ShortFoundInArray[0], ShortFoundInArray[1]);
+	}
+}
+main()
+{
+	int a[n] = {};
+	int b[n] = {};
+	int MidA = (0+n)/2;
+	int MidB = (0+n)/2;
+	int lowA = 0;
+	int highA = n;
+	int lowB = 0;
+	int highB = n;
+ 
+	//Forming initial number line.
+	ShortNumberLine[0] = MidA;
+	ShortNumberLine[1] = MidB;
+	ShortFoundInArray[0] = A;
+	ShortFoundInArray[1] = B;
+	SortShortNumberLine();
+ 
+	
+	while(lowA < highA && lowB < highB)
+	{
+		//Stop condition
+		if(ShortNumberLine[0] == ShortNumberLine[1] +1)
+		{
+			//Consecutive numbers so any one could be answer
+			exit(0);
+		}
+		if(ShortFoundInArray[0] == ShortFoundInArray[1])
+		{
+			//If median is found in 1 array of the two
+			//Median is mid of ShortNumberLine[0], ShortNumberLine[1]
+			int Median = (ShortFoundInArray[0][ShortNumberLine[0]] +        ShortFoundInArray[0][ShortNumberLine[1]])/2;
+			exit(0);
+		}
+		
+		else
+		{
+			//Go towards right of ShortNumberLine[0]
+			//Lets assume ShortFoundInArray[0] = A
+			lowA = MidA;
+			
+			//Go towards the left of ShortNumberLine[1]
+			//Lets assume ShortFoundInArray[1] = B
+			highB = MidB;
+			
+			MidA = (lowA+highA)/2;
+			MidB = (lowB+highB)/2;
+ 
+			NumberLine[0] = ShortFoundInArray[0];
+			NumberLine[1] = ShortFoundInArray[1];
+			NumberLine[2] = MidA;
+			NumberLine[3] = MidB;
+			SortNumberLine();
+			
+		}
+	}
+	if(lowA == highA)
+	{
+		Median = A[highA];
+		exit(0);
+	}
+	if(lowB == highB)
+	{
+		Median = B[highB];
+		exit(0);
+	}
+ 
+	
+}
