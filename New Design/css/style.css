@@ -1,0 +1,103 @@
+@import url("hover-min.css");
+
+@media screen and (min-width: 980px) /* Desktop */ {
+  body {
+    background-color: transparent;
+  }
+}
+
+@media screen  and (max-width: 979px) /* Tablet */ {
+  body {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+  body {
+    background-color: transparent;
+  }
+}
+
+
+/* Remove white space betwee  top and the menu*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/* Header */
+.menu {
+  	/* Horizontally align to right */
+	float: right;
+	font-size: 2vw;
+	border: none;
+	font-family: 'Comfortaa', cursive;
+    padding: 0;
+	text-align: center;
+}
+
+th.menu_item a{    	
+	transition: opacity 0.7s;
+	opacity: 0.25;
+	color: white;
+}
+th.menu_item:hover a{
+	opacity:1.5;
+}
+th.menu_item {
+	transition: background-image 0.5s;
+	border: none;
+}
+.menu_name {
+	padding-top: 5%;
+	text-align: center;
+	font-size: 5vh;
+	font-family: 'Comfortaa', cursive;
+}
+
+/* Generic text formatting */
+a {
+	color: #818181;
+	text-decoration: none;
+}
+
+p, pre, h2, h3, h4, ul, ol {
+    font-family: 'Comfortaa', cursive;
+	width: 80%;
+	text-align: left;
+	/* Horizontally align in center */
+	margin: 0 auto;
+
+}
+
+/* Black tone overlay over picture */
+.black_tone_overlay {
+	height: 100vh;
+	/* black tone overlay */
+	background-color: rgba(0,0,0,.65);
+}
+
+/* Footer */
+.social_container {
+	width: 20vw;
+	padding: 1%;
+	border-radius: 25px;
+	opacity: 0.4;
+	position: fixed;
+	bottom: 0;
+
+}
+
+/* Main content */
+.content {
+	padding-top: 15vh;
+	color: #cfcfd1;
+	text-align: center;
+	margin: 0 auto;
+	font-family: 'Comfortaa', cursive;
+}
+.content p{
+	text-align: center;
+}
+.content h1{
+	font-size: 700%;
+}
